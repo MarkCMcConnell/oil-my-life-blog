@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     hexrgba = require('postcss-hexrgba');
 
 gulp.task('styles', function() {
-  return gulp.src('./app/public/assets/stylesheets/styles.css')
+  return gulp.src('./app/assets/styles/styles.css')
   .pipe(postcss([cssImport, mixins, cssvars, nested, hxrgba, autoprefixer]))
   // Handle errors, provide readable errors, and allow gulp watch to continue operating
   .on('error', function(errorInfo) {
