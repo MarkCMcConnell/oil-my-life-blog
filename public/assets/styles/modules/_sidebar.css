@@ -1,0 +1,16 @@
+.sidebar {
+  text-align: center;
+
+  &__subtitle {
+    color: $mainGreen;
+    border-bottom: 1px solid $mainGreen;
+
+    &--t-margin {
+      margin-top: 3rem;
+    }
+  }
+
+  &__link {
+    color: #000;
+  }
+}

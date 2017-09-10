@@ -1,0 +1,10 @@
+.footer {
+  background-color: #fff;
+  text-align: center;
+  /*border-top: 4px solid $mainGreen;*/
+
+  &__text {
+    margin: 0;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,13 @@
+.button {
+  background-color: transparent;
+  color: $mainGreen;
+  border: 3px solid $mainGreen;
+  padding: 12px 30px;
+  font-weight: 700;
+  display: block;
+  margin: 1.25rem auto 0 auto;
+
+  &--b-margin {
+    margin-bottom: 2rem;
+  }
+}

@@ -3,34 +3,33 @@
 // with no changes, if the CSS injection does not automatically refresh changes.
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    ejs = require('gulp-ejs'),
+    nodemon = require('gulp-nodemon'),
     // Live reloading on file change
     browserSync = require('browser-sync').create();
 
 gulp.task('watch', function() {
-
   browserSync.init({
     // Prevent browser-sync notification in window
     notify: false,
-    server: {
-      proxy: 'local.dev'
-    }
+    proxy: 'http://localhost:5000',
+    files: ['**/*.*'],
+    port: 7000
   });
 
-  watch('./app/views/**/*.ejs', function() {
+  watch('./public/views/**/*.ejs', function() {
     browserSync.reload();
   });
 
-  watch('./app/assets/styles/**/*.css', function() {
+  watch('./public/assets/styles/**/*.css', function() {
     gulp.start('cssInject');
   });
 
-  watch('./app/assets/scripts/**/*.js', function() {
+  watch('./public/assets/scripts/**/*.js', function() {
     gulp.start('scriptsRefresh');
   });
 
   gulp.task('cssInject', ['styles'], function() {
-    return gulp.src('./app/temp/styles/styles.css')
+    return gulp.src('./public/temp/styles/styles.css')
       .pipe(browserSync.stream());
   });
 

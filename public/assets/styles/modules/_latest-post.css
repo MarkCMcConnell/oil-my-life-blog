@@ -1,0 +1,30 @@
+.latest-post {
+  margin-bottom: 3.75rem;
+  background-image: url('/assets/images/sean-mcauliffe-12857.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  color: #fff;
+  position: relative;
+
+  &__text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &__tag {
+
+    }
+
+    &__title {
+      font-weight: 700;
+    }
+
+    &__date {
+
+    }
+  }
+}

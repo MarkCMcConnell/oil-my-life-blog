@@ -1,0 +1,28 @@
+.primary-nav {
+  opacity: 0;
+  z-index: -10;
+  position: relative;
+  transition: all .5s ease-out;
+  transform: scale(.8);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  @mixin atMedium {
+    opacity: 1;
+    z-index: 1;
+    /*border-bottom: .4rem solid $mainGreen;*/
+    transform: scale(1);
+  }
+
+  &__flex-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > a {
+      color: #000;
+    }
+  }
+}

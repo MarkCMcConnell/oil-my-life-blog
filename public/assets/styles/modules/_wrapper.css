@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: 1200px;
+  padding-left: 20px;
+  margin-left: auto;
+  padding-right: 20px;
+  margin-right: auto;
+  overflow: hidden;
+  background-color: #fff;
+
+  &--p-top {
+    padding-top: 2rem;
+  }
+
+  @mixin atMedium {
+    max-width: 900px;
+  }
+}

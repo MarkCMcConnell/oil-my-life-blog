@@ -1,0 +1,41 @@
+.recent-post {
+  margin-bottom: 3.75rem;
+
+  @mixin clearfix;
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  &__left-side {
+    width: 60%;
+    float: left;
+
+    &__image {
+      width: 100%;
+      height: auto;
+      vertical-align: top;
+    }
+  }
+
+  &__right-side {
+    width: 40%;
+    float: right;
+
+    &__text {
+     padding: .6rem;
+    }
+
+    &__title {
+     color: $mainGreen;
+     font-weight: 700;
+    }
+
+    &__snippet {
+     font-weight: 400;
+    }
+  }
+}

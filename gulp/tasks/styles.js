@@ -1,5 +1,4 @@
 // Task responsible for setting up the app to handle PostCSS
-
 var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
@@ -10,12 +9,13 @@ var gulp = require('gulp'),
     hexrgba = require('postcss-hexrgba');
 
 gulp.task('styles', function() {
-  return gulp.src('./app/assets/styles/styles.css')
-  .pipe(postcss([cssImport, mixins, cssvars, nested, hxrgba, autoprefixer]))
+  console.log('styles working');
+  return gulp.src('./public/assets/styles/styles.css')
+  .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
   // Handle errors, provide readable errors, and allow gulp watch to continue operating
   .on('error', function(errorInfo) {
     console.log(errorInfo.toString());
     this.emit('end');
   })
-  .pipe(gulp.dest('./app/temp/styles'));
+  .pipe(gulp.dest('./public/temp/styles'));
 });
