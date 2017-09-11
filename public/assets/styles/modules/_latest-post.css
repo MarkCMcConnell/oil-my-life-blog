@@ -1,4 +1,5 @@
 .latest-post {
+  margin-top: 4rem;
   margin-bottom: 3.75rem;
   background-image: url('/assets/images/sean-mcauliffe-12857.jpg');
   background-repeat: no-repeat;
@@ -8,6 +9,10 @@
   color: #fff;
   position: relative;
 
+  @mixin atMedium {
+    margin-top: 4.5rem;
+  }
+
   &__text {
     position: absolute;
     top: 60%;
@@ -15,16 +20,8 @@
     transform: translate(-50%, -50%);
     text-align: center;
 
-    &__tag {
-
-    }
-
     &__title {
       font-weight: 700;
-    }
-
-    &__date {
-
     }
   }
 }

@@ -16,23 +16,22 @@
  		<link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
  	</head>
  	<body>
-    <header class="header">
-      <h1 class="header__title">Oil My Life</h1>
-      <div class="header__mobile-menu">
-        <div class="header__mobile-menu__icon"></div>
+    <nav class="primary-nav">
+      <h1 class="primary-nav__title">Oil My Life</h1>
+      <div class="primary-nav__mobile-menu">
+        <div class="primary-nav__mobile-menu__icon"></div>
       </div>
-      <nav class="primary-nav">
-        <div class="primary-nav__border"></div>
-          <div class="primary-nav__flex-container">
-            <%# Possibly put in links related to different tags %>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Link</a>
-            <a href="#">Login / Register</a>
-          </div>
+      <div class="primary-nav__border"></div>
+        <div class="primary-nav__flex-container">
+          <%# Possibly put in links related to different tags %>
+          <a class="primary-nav__link" href="#">Home</a>
+          <a class="primary-nav__link" href="#">About</a>
+          <a class="primary-nav__link" href="#">Blog Posts</a>
+          <a class="primary-nav__link" href="#">Login / Register</a>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top">
       <div class="latest-post">
@@ -45,7 +44,7 @@
 
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
-          <h2 class="recent-post__title">Recent Posts</h2>
+          <h2 class="generic-text-container">Recent Posts</h2>
           <%# Last three recent blog posts in smaller card format on left side column %>
           <%# Refactor to ejs loop %>
           <div class="recent-post card">
@@ -101,13 +100,18 @@
             <p class="sidebar__link">Anxiety</a>
             <p class="sidebar__link">Parenting</a>
             <%# Full width divider with a link to the parent app %>
-            <%# Link to main app %>
-            <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Visit The Main Site</h3>
-            <a class="sidebar__link" href="#">Oil My Life</a>
           </div>
         </div>
       </div>
 
+      <div class="divider">
+        <%# Link to main app %>
+        <div class="divider__title divider__title--t-margin">
+          <h2><a class="divider__link" href="#">Visit The Main Site</a></h2>
+        </div>
+      </div>
+
+      <h2 class="generic-text-container">Older Posts</h2>
       <div class="row row--gutters-medium">
         <div class="row__medium-4 row__medium-4--b-margin">
           <div class="older-post card">
@@ -143,7 +147,8 @@
       <%# Button will load another six posts then move to the end of the list
       to allow for more to be loaded until end %>
       <button class="button button--b-margin">Load More</button>
-
+    </div>
+    <footer class="footer">
       <div class="social-links">
         <h2 class="social-links__follow">Follow Me On</h2>
         <div class="social-links__container">
@@ -152,9 +157,7 @@
           <a class="social-links__link" href="#"><i class="social-links__icon fa fa-instagram"></i></a>
         </div>
       </div>
-    </div>
-    <footer class="footer">
-      <p class="footer__text">Mark McConnell &copy; 2017</p>
+      <p class="footer__text"> Site Created by Mark McConnell &copy; 2017</p>
     </footer>
  	<%# <script type="text/javascript" src="/temp/scripts/App.js"></script>%>
  	</body>

@@ -1,28 +1,63 @@
 .primary-nav {
-  opacity: 0;
-  z-index: -10;
-  position: relative;
-  transition: all .5s ease-out;
-  transform: scale(.8);
+  background-color: #fff;
+  width: 100%;
+  z-index: 2;
+  position: fixed;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  text-align: center;
 
-  @mixin atMedium {
-    opacity: 1;
-    z-index: 1;
-    /*border-bottom: .4rem solid $mainGreen;*/
-    transform: scale(1);
+  &__title {
+    font-size: 2rem;
+    color: $mainGreen;
+    margin-left: 1.25rem;
+    float: left;
+
+    @mixin atMedium {
+      font-size: 3rem;
+      float: none;
+      margin-top: 0;
+      margin-bottom: .75rem;
+    }
   }
 
   &__flex-container {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    opacity: 0;
+    transition: all .5s ease-out;
+    transform: scale(.8);
+
+    @mixin atMedium {
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      visibility: visible;
+    }
 
     & > a {
       color: #000;
+      margin: 0 4.75rem;
+      padding-bottom: .5rem;
+    }
+  }
+
+  &__mobile-menu {
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @mixin atMedium {
+      opacity: 0;
+    }
+
+    &__icon {
+      background-color: $mainGreen;
+      height: 4px;
+      width: 30px;
     }
   }
 }

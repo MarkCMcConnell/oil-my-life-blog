@@ -3,13 +3,6 @@
 
   @mixin clearfix;
 
-  &__title {
-    font-weight: 700;
-    font-size: 1.75rem;
-    text-align: center;
-    margin-top: 0;
-  }
-
   &__left-side {
     width: 60%;
     float: left;

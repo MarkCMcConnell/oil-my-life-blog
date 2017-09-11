@@ -1,8 +1,10 @@
 .social-links {
   text-align: center;
+  background-color: $mainPurple;
+  color: #fff;
 
   &__container {
-    width: 50%;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
     display: flex;

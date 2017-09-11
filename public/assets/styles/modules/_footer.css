@@ -1,10 +1,13 @@
 .footer {
-  background-color: #fff;
+  background-color: $mainPurple;
+  color: #fff;
   text-align: center;
+  padding-top: 1.75rem;
   /*border-top: 4px solid $mainGreen;*/
 
   &__text {
     margin: 0;
-    padding: 1rem;
+    padding: 1.5rem;
+    font-size: .5rem;
   }
 }

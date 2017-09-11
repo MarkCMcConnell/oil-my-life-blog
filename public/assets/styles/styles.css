@@ -2,7 +2,6 @@
 @import 'base/_global';
 @import 'base/_variables';
 @import 'base/_mixins';
-@import 'modules/_header';
 @import 'modules/_wrapper';
 @import 'modules/_primary-nav';
 @import 'modules/_row';
@@ -13,4 +12,6 @@
 @import 'modules/_button';
 @import 'modules/_social-links';
 @import 'modules/_footer';
-@import 'modules/_sidebar.css';
+@import 'modules/_sidebar';
+@import 'modules/_generic-text-container';
+@import 'modules/_divider';
