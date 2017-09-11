@@ -1,11 +1,19 @@
 .recent-post {
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.5rem;
+
+  @mixin atMedium {
+    margin-bottom: 3.75rem;
+  }
 
   @mixin clearfix;
 
   &__left-side {
-    width: 60%;
-    float: left;
+    width: 100%;
+
+    @mixin atSmall {
+      width: 60%;
+      float: left;
+    }
 
     &__image {
       width: 100%;
@@ -15,8 +23,12 @@
   }
 
   &__right-side {
-    width: 40%;
-    float: right;
+    width: 100%;
+
+    @mixin atMedium {
+      width: 40%;
+      float: right;
+    }
 
     &__text {
      padding: .6rem;

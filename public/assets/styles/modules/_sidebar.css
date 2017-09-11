@@ -1,5 +1,10 @@
 .sidebar {
   text-align: center;
+  display: none;
+
+  @mixin atMedium {
+    display: block;
+  }
 
   &__subtitle {
     color: $mainGreen;

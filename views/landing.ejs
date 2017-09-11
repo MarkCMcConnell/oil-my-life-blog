@@ -1,36 +1,4 @@
-<!DOCTYPE html>
- <html>
- 	<head>
- 		<meta charset="utf-8">
- 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
- 		<title>Oil My Life Blog</title>
- 		<meta name="description" content="A blog about a mother who discovered how essential oils can change her life" />
- 		<meta name="author" content="Amy McConnell" />
- 		<meta name="HandheldFriendly" content="true" />
- 		<meta name="MobileOptimized" content="320" />
- 		<!-- Use maximum-scale and user-scalable at your own risk. It disables pinch/zoom. Think about usability/accessibility before including.-->
- 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
- 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display:400,400i,700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
- 		<link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
- 	</head>
- 	<body>
-    <nav class="primary-nav">
-      <h1 class="primary-nav__title">Oil My Life</h1>
-      <div class="primary-nav__mobile-menu">
-        <div class="primary-nav__mobile-menu__icon"></div>
-      </div>
-      <div class="primary-nav__border"></div>
-        <div class="primary-nav__flex-container">
-          <%# Possibly put in links related to different tags %>
-          <a class="primary-nav__link" href="#">Home</a>
-          <a class="primary-nav__link" href="#">About</a>
-          <a class="primary-nav__link" href="#">Blog Posts</a>
-          <a class="primary-nav__link" href="#">Login / Register</a>
-        </div>
-      </div>
-    </nav>
+<% include partials/header %>
 
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top">
@@ -111,9 +79,9 @@
         </div>
       </div>
 
-      <h2 class="generic-text-container">Older Posts</h2>
+      <h2 class="generic-text-container generic-text-container--t-margin">Older Posts</h2>
       <div class="row row--gutters-medium">
-        <div class="row__medium-4 row__medium-4--b-margin">
+        <div class="row__small-4 row__small-4--b-margin">
           <div class="older-post card">
             <img class="older-post__image" src="http://via.placeholder.com/200x100" />
             <div class="older-post__text">
@@ -123,7 +91,7 @@
             </div>
           </div>
         </div>
-        <div class="row__medium-4 row__medium-4--b-margin">
+        <div class="row__small-4 row__small-4--b-margin">
           <div class="older-post card">
             <img class="older-post__image" src="http://via.placeholder.com/200x100" />
             <div class="older-post__text">
@@ -133,7 +101,7 @@
             </div>
           </div>
         </div>
-        <div class="row__medium-4 row__medium-4--b-margin">
+        <div class="row__small-4 row__small-4--b-margin">
           <div class="older-post card">
             <img class="older-post__image" src="http://via.placeholder.com/200x100" />
             <div class="older-post__text">
@@ -148,17 +116,5 @@
       to allow for more to be loaded until end %>
       <button class="button button--b-margin">Load More</button>
     </div>
-    <footer class="footer">
-      <div class="social-links">
-        <h2 class="social-links__follow">Follow Me On</h2>
-        <div class="social-links__container">
-          <a class="social-links__link" href="#"><i class="social-links__icon fa fa-facebook"></i></a>
-          <a class="social-links__link" href="#"><i class="social-links__icon fa fa-twitter"></i></a>
-          <a class="social-links__link" href="#"><i class="social-links__icon fa fa-instagram"></i></a>
-        </div>
-      </div>
-      <p class="footer__text"> Site Created by Mark McConnell &copy; 2017</p>
-    </footer>
- 	<%# <script type="text/javascript" src="/temp/scripts/App.js"></script>%>
- 	</body>
- </html>
+
+<% include partials/footer %>

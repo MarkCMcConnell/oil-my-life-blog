@@ -21,20 +21,16 @@
   }
 
   &__flex-container {
-    opacity: 0;
-    transition: all .5s ease-out;
-    transform: scale(.8);
+    display: none;
+    z-index: -10;
 
-    @mixin atMedium {
-      opacity: 1;
+    @mixin atLarge {
+      display: block;
       z-index: 1;
-      transform: scale(1);
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      visibility: visible;
     }
 
     & > a {
@@ -45,19 +41,19 @@
   }
 
   &__mobile-menu {
-    opacity: 1;
+    display: block;
     position: absolute;
-    top: 20px;
+    top: 50%;
     right: 20px;
+    transform: translateY(-50%);
 
-    @mixin atMedium {
-      opacity: 0;
+    @mixin atLarge {
+      display: none;
     }
 
     &__icon {
-      background-color: $mainGreen;
-      height: 4px;
-      width: 30px;
+      color: $mainGreen;
+      font-size: 1.5rem;
     }
   }
 }

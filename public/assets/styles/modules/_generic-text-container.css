@@ -3,4 +3,8 @@
   font-size: 1.75rem;
   text-align: center;
   margin-top: 0;
+
+  &--t-margin {
+    margin-top: 1.5rem;
+  }
 }

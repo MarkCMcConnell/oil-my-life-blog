@@ -1,7 +1,7 @@
 .latest-post {
   margin-top: 4rem;
-  margin-bottom: 3.75rem;
-  background-image: url('/assets/images/sean-mcauliffe-12857.jpg');
+  margin-bottom: 1.5rem;
+  background-image: url('/assets/images/sean-mcauliffe-12857-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -11,6 +11,8 @@
 
   @mixin atMedium {
     margin-top: 4.5rem;
+    margin-bottom: 3.75rem;
+    background-image: url('/assets/images/sean-mcauliffe-12857.jpg');
   }
 
   &__text {

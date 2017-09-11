@@ -18,6 +18,18 @@
     padding-right: 60px;
   }
 
+  @mixin atSmall {
+
+    &__small-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    &--b-margin {
+      margin-bottom: .55rem;
+    }
+  }
+
   @mixin atMedium {
 
     &__medium-4 {
