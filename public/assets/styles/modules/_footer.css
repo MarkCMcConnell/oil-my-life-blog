@@ -2,8 +2,7 @@
   background-color: $mainPurple;
   color: #fff;
   text-align: center;
-  padding-top: 1.75rem;
-  /*border-top: 4px solid $mainGreen;*/
+  padding-top: .5rem;
 
   &__text {
     margin: 0;

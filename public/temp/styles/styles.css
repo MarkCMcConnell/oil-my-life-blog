@@ -497,7 +497,7 @@ a {
 @media (min-width: 800px) {
 
 .wrapper {
-    max-width: 900px
+    max-width: 1200px
 }
   }
 
@@ -555,7 +555,15 @@ a {
       color: #000;
       margin: 0 4.75rem;
       padding-bottom: .5rem;
+      -webkit-transform: scale(1);
+              transform: scale(1);
     }
+
+.primary-nav__flex-container > a:hover {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+        color: #7FCC7F;
+      }
 
 .primary-nav__mobile-menu {
     display: block;
@@ -614,6 +622,11 @@ a {
 
 @media (min-width: 800px) {
 
+    .row__medium-3 {
+      float: left;
+      width: 25%;
+    }
+
     .row__medium-4 {
       float: left;
       width: 33.33%;
@@ -645,6 +658,11 @@ a {
     .row__medium-8 {
       float: left;
       width: 66.66%;
+    }
+
+    .row__medium-9 {
+      float: left;
+      width: 75%;
     }
   }
 
@@ -712,7 +730,7 @@ a {
     width: 100%;
   }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
 
 .recent-post__left-side {
       width: 60%;
@@ -745,18 +763,16 @@ a {
 .recent-post__right-side__title {
      color: #7FCC7F;
      font-weight: 700;
+     font-size: 1.5rem;
     }
 
 .recent-post__right-side__snippet {
      font-weight: 400;
     }
 
-.latest-post {
-  margin-top: 4rem;
+.header {
+  margin-top: 4.5rem;
   margin-bottom: 1.5rem;
-  background-image: url('/assets/images/sean-mcauliffe-12857-mobile.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: 400px;
   color: #fff;
@@ -765,14 +781,18 @@ a {
 
 @media (min-width: 800px) {
 
-.latest-post {
+.header {
     margin-top: 4.5rem;
-    margin-bottom: 3.75rem;
-    background-image: url('/assets/images/sean-mcauliffe-12857.jpg')
+    margin-bottom: 3.75rem
 }
   }
 
-.latest-post__text {
+.header__image {
+    width: 100%;
+    max-height: 400px;
+  }
+
+.header__text {
     position: absolute;
     top: 60%;
     left: 50%;
@@ -781,9 +801,17 @@ a {
     text-align: center;
   }
 
-.latest-post__text__title {
+.header__text__title {
       font-weight: 700;
+      font-size: 1.75rem;
     }
+
+@media (min-width: 1010px) {
+
+.header__text__title {
+        font-size: 2.5rem
+    }
+  }
 
 .button {
   background-color: transparent;
@@ -795,6 +823,7 @@ a {
   margin: 1.25rem auto 0 auto;
   -webkit-transform: scale(1);
           transform: scale(1);
+  outline: none;
 }
 
 .button:hover {
@@ -864,10 +893,8 @@ a {
   background-color: #7f7fcc;
   color: #fff;
   text-align: center;
-  padding-top: 1.75rem;
+  padding-top: .5rem;
 }
-
-/*border-top: 4px solid $mainGreen;*/
 
 .footer__text {
     margin: 0;
@@ -913,7 +940,7 @@ a {
 
 .divider {
   text-align: center;
-  background-color: #cc7f7f;
+  background-color: #7f7fcc;
   width: 100%;
   height: 8rem;
   position: relative;
@@ -931,4 +958,52 @@ a {
 .divider__link {
     font-size: 1.5rem;
     color: #fff;
+  }
+
+.blog-post {
+  margin-top: 4.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  height: 400px;
+  color: #fff;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+
+.blog-post {
+    margin-top: 4.5rem;
+    margin-bottom: 3.75rem
+}
+  }
+
+.blog-post__image {
+    width: 100%;
+    max-height: 400px;
+  }
+
+.blog-post__text {
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    background-color: #fff;
+    width: 60%;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+.blog-post__text__title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #000;
+    }
+
+@media (min-width: 1010px) {
+
+.blog-post__text__title {
+        font-size: 2rem
+    }
   }

@@ -2,11 +2,10 @@
 
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top">
-      <div class="latest-post">
-        <div class="latest-post__text">
-          <p class="latest-post__text__tag">Tags</p>
-          <h1 class="latest-post__text__title">For Moms And Better Health</h1>
-          <p class="latest-post__text__date">September 2017</p>
+      <div class="header">
+        <img class="header__image" src="/assets/images/test.png" />
+        <div class="header__text">
+          <h1 class="header__text__title">For Moms And Better Health</h1>
         </div>
       </div>
 
@@ -22,7 +21,7 @@
               </div>
               <div class="recent-post__right-side">
                 <div class="recent-post__right-side__text">
-                  <h3 class="recent-post__right-side__title">Recent Post Title</h3>
+                  <h3 class="recent-post__right-side__title">The Dreaded "P" Word...</h3>
                   <p class="recent-post__right-side__snippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </div>
               </div>
@@ -62,59 +61,18 @@
             <p class="sidebar__link">This month</a>
             <p class="sidebar__link">Last month</a>
             <p class="sidebar__link">Last Last month</a>
+            <p class="sidebar__link">Older</a>
             <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Tags</h3>
             <%# Example tags%>
             <p class="sidebar__link">Recipes</a>
-            <p class="sidebar__link">Anxiety</a>
+            <p class="sidebar__link">Essential Oils</a>
+            <p class="sidebar__link">Mental Health</a>
             <p class="sidebar__link">Parenting</a>
             <%# Full width divider with a link to the parent app %>
           </div>
         </div>
       </div>
-
-      <div class="divider">
-        <%# Link to main app %>
-        <div class="divider__title divider__title--t-margin">
-          <h2><a class="divider__link" href="#">Visit The Main Site</a></h2>
-        </div>
-      </div>
-
-      <h2 class="generic-text-container generic-text-container--t-margin">Older Posts</h2>
-      <div class="row row--gutters-medium">
-        <div class="row__small-4 row__small-4--b-margin">
-          <div class="older-post card">
-            <img class="older-post__image" src="http://via.placeholder.com/200x100" />
-            <div class="older-post__text">
-              <p class="older-post__tag">Post Tag</p>
-              <h3 class="older-post__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-              <p class="older-post__date">September 2017</p>
-            </div>
-          </div>
-        </div>
-        <div class="row__small-4 row__small-4--b-margin">
-          <div class="older-post card">
-            <img class="older-post__image" src="http://via.placeholder.com/200x100" />
-            <div class="older-post__text">
-              <p class="older-post__tag">Post Tag</p>
-              <h3 class="older-post__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-              <p class="older-post__date">September 2017</p>
-            </div>
-          </div>
-        </div>
-        <div class="row__small-4 row__small-4--b-margin">
-          <div class="older-post card">
-            <img class="older-post__image" src="http://via.placeholder.com/200x100" />
-            <div class="older-post__text">
-              <p class="older-post__tag">Post Tag</p>
-              <h3 class="older-post__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-              <p class="older-post__date">September 2017</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%# Button will load another six posts then move to the end of the list
-      to allow for more to be loaded until end %>
-      <button class="button button--b-margin">Load More</button>
     </div>
 
+<% include partials/bottom-section %>
 <% include partials/footer %>

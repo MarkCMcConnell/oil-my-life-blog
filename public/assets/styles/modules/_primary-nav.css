@@ -37,6 +37,12 @@
       color: #000;
       margin: 0 4.75rem;
       padding-bottom: .5rem;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.2);
+        color: $mainGreen;
+      }
     }
   }
 

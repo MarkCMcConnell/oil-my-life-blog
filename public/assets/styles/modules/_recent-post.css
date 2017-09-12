@@ -10,7 +10,7 @@
   &__left-side {
     width: 100%;
 
-    @mixin atSmall {
+    @mixin atMedium {
       width: 60%;
       float: left;
     }
@@ -37,6 +37,7 @@
     &__title {
      color: $mainGreen;
      font-weight: 700;
+     font-size: 1.5rem;
     }
 
     &__snippet {
