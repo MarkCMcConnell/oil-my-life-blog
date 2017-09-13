@@ -4,11 +4,11 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    App: './app/public/assets/scripts/Main.js',
-    Vendor: './app/public/assets/scripts/Vendor.js'
+    App: './public/assets/scripts/App.js',
+    Vendor: './public/assets/scripts/Vendor.js'
   },
   output: {
-    path: path.resolve(__dirname, './app/temp/scripts'),
+    path: path.resolve(__dirname, './public/temp/scripts'),
     filename: '[name].js'
   },
   module: {
@@ -18,8 +18,8 @@ module.exports = {
         query: {
           presets: ['es2015']
         },
-        test: /\.js&/,
-        excluse: /node_modules/
+        test: /\.js$/,
+        exclude: /node_modules/
       }
     ]
   }

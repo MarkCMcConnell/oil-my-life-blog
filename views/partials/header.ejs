@@ -16,18 +16,20 @@
  		<link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
  	</head>
  	<body>
-    <nav class="primary-nav">
-      <h1 class="primary-nav__title">Oil My Life</h1>
-      <div class="primary-nav__mobile-menu">
-        <i class="primary-nav__mobile-menu__icon fa fa-bars"></i>
+    <div class="site-header">
+      <h1 class="site-header__title">Oil My Life</h1>
+      <div class="site-header__btn-container">
+        <i class="site-header__btn fa fa-bars"></i>
       </div>
-      <div class="primary-nav__border"></div>
-        <div class="primary-nav__flex-container">
-          <%# Possibly put in links related to different tags %>
-          <a class="primary-nav__link" href="#">Home</a>
-          <a class="primary-nav__link" href="#">About</a>
-          <a class="primary-nav__link" href="#">Videos</a>
-          <a class="primary-nav__link" href="#">Login / Register</a>
-        </div>
+      <%# Possibly put in links related to different tags %>
+      <div id="menu-content" class="site-header__menu-content">
+        <nav class="primary-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Login / Register</a></li>
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </div>

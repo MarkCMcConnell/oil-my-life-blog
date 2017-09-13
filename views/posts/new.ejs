@@ -1,0 +1,11 @@
+<% include partials/header %>
+
+<h1>Create a new blog post</h1>
+
+<form action="/posts" method="POST">
+  <input type="text" name="name" placeholder="Title" />
+  <input type="text" name="image" placeholder="Image" />
+  <input type="text" name="content" placeholder="Content" />
+</form>
+
+<% include partials/footer %>

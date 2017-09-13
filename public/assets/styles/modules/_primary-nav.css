@@ -1,65 +1,14 @@
 .primary-nav {
-  background-color: #fff;
-  width: 100%;
-  z-index: 2;
-  position: fixed;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  text-align: center;
+  padding-top: 1.5rem;
 
-  &__title {
-    font-size: 2rem;
-    color: $mainGreen;
-    margin-left: 1.25rem;
-    float: left;
-
-    @mixin atMedium {
-      font-size: 3rem;
-      float: none;
-      margin-top: 0;
-      margin-bottom: .75rem;
-    }
+  ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
   }
 
-  &__flex-container {
-    display: none;
-    z-index: -10;
-
-    @mixin atLarge {
-      display: block;
-      z-index: 1;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    & > a {
-      color: #000;
-      margin: 0 4.75rem;
-      padding-bottom: .5rem;
-      transform: scale(1);
-
-      &:hover {
-        transform: scale(1.2);
-        color: $mainGreen;
-      }
-    }
-  }
-
-  &__mobile-menu {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-
-    @mixin atLarge {
-      display: none;
-    }
-
-    &__icon {
-      color: $mainGreen;
-      font-size: 1.5rem;
-    }
+  li {
+    display: inline-block;
+    padding: 0 3rem;
   }
 }
