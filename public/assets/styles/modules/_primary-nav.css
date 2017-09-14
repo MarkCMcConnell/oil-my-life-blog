@@ -1,5 +1,12 @@
 .primary-nav {
   margin-top: .5rem;
+  display: none;
+  transition: all .3s ease-out;
+
+  &--is-expanded {
+    display: block;
+    padding-bottom: .5rem;
+  }
 
   ul {
     margin: 0;
@@ -7,12 +14,18 @@
     text-decoration: none;
   }
 
-  li {
+  &__list-item {
     display: inline-block;
     padding: 0 3rem .5rem 3rem;
+
+    /*&--is-visible {
+      display: block;
+      padding-bottom: .5rem;
+    }*/
   }
 
   a {
+    display: block;
     color: #fff;
     font-size: 1.25rem;
     transition: transform .3s ease-out;

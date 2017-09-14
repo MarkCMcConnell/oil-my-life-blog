@@ -9,11 +9,6 @@
 
   @mixin atMedium {
     border-radius: 0;
-
-  }
-
-  &--is-expanded {
-    background-color: rgba($mainGreen, 0.65);
   }
 
   &__title {
@@ -27,15 +22,19 @@
   }
 
   &__menu-content {
-    display: none;
+    opacity: 0;
+    z-index: -2;
+    transition: all .3s ease-out;
 
     @mixin atMedium {
       display: block;
+      opacity: 1;
+      z-index: 1;
     }
 
     &--is-visible {
-      display: block;
-      background-color: rgba($mainPurple, 0.8);
+      opacity: 1;
+      z-index: 5;
     }
   }
 
@@ -55,10 +54,5 @@
   &__btn {
     color: #fff;
     font-size: 1.75rem;
-
-    &--close-x {
-
-    }
   }
-
 }
