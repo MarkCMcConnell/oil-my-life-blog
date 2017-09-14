@@ -1,12 +1,15 @@
 .site-header {
-  background-color: #fff;
+  background-color: $mainPurple;
+  text-align: center;
   position: fixed;
   width: 100%;
   z-index: 1;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 0 0 50% 50%;
 
   @mixin atMedium {
-    position: fixed;
+    border-radius: 0;
+
   }
 
   &--is-expanded {
@@ -14,56 +17,43 @@
   }
 
   &__title {
-    color: $mainGreen;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 0.8rem;
-    transform: translateY(-50%);
+    color: #fff;
+    margin-bottom: .75rem;
+    margin-top: .5rem;
 
     @mixin atMedium {
-      font-size: 3rem;
-      margin-top: 0;
-      margin-bottom: .75rem;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      font-size: 2.5rem;
     }
   }
 
   &__menu-content {
-    opacity: 0;
-    z-index: -1;
+    display: none;
 
     @mixin atMedium {
-      opacity: 1;
-      z-index: 1;
+      display: block;
     }
 
     &--is-visible {
-      opacity: 1;
-      z-index: 5;
+      display: block;
       background-color: rgba($mainPurple, 0.8);
     }
   }
 
   &__btn-container {
     position: absolute;
-    top: 50%;
-    right: 0.8rem;
-    transform: translateY(-50%);
+    top: 8px;
+    right: 20px;
     opacity: 1;
     z-index: 1;
 
     @mixin atMedium {
-      opacity: 1;
+      opacity: 0;
       z-index: -1;
     }
   }
 
   &__btn {
-    color: $mainGreen;
+    color: #fff;
     font-size: 1.75rem;
 
     &--close-x {

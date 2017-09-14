@@ -12,12 +12,13 @@
 
     @mixin atMedium {
       width: 60%;
+      height: auto;
       float: left;
     }
 
     &__image {
-      height: 100%;
-      vertical-align: middle;
+      width: 100%;
+      vertical-align: top;
     }
   }
 
@@ -34,13 +35,22 @@
     }
 
     &__title {
-     color: $mainGreen;
-     font-weight: 700;
-     font-size: 1.5rem;
+      color: $mainGreen;
+      font-weight: 700;
+      font-size: 1rem;
+
+      @mixin atMedium {
+        font-size: 1.2rem;
+      }
     }
 
     &__snippet {
      font-weight: 400;
+     font-size: .8rem;
+
+     @mixin atMedium {
+       font-size: 1rem;
+     }
     }
   }
 }

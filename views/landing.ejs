@@ -17,7 +17,7 @@
           <div class="recent-post card">
             <div class="row">
               <div class="recent-post__left-side">
-                <img class="recent-post__left-side__image" src='<%= post.image %>' alt="Placeholder image" />
+                <img class="recent-post__left-side__image" src='<%= post.image %>' />
               </div>
               <div class="recent-post__right-side">
                 <div class="recent-post__right-side__text">
@@ -56,20 +56,7 @@
         </div>
         <div class="row__medium-4">
           <%# Second column for archoved posts and tags %>
-          <div class="sidebar">
-            <h3 class="sidebar__subtitle">Archives</h3>
-            <p class="sidebar__link">This month</a>
-            <p class="sidebar__link">Last month</a>
-            <p class="sidebar__link">Last Last month</a>
-            <p class="sidebar__link">Older</a>
-            <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Tags</h3>
-            <%# Example tags%>
-            <p class="sidebar__link">Recipes</a>
-            <p class="sidebar__link">Essential Oils</a>
-            <p class="sidebar__link">Mental Health</a>
-            <p class="sidebar__link">Parenting</a>
-            <%# Full width divider with a link to the parent app %>
-          </div>
+          <% include partials/sidebar %>
         </div>
       </div>
     </div>
