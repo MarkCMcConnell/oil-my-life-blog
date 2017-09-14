@@ -1,27 +1,24 @@
 .primary-nav {
-  margin-top: .5rem;
-  display: none;
-  transition: all .3s ease-out;
-
-  &--is-expanded {
-    display: block;
-    padding-bottom: .5rem;
-  }
 
   ul {
     margin: 0;
     padding: 0;
+    background-color: rgba($mainPurple, .75);
     text-decoration: none;
+
+    @mixin atMedium {
+      background-color: none;
+    }
   }
 
   &__list-item {
     display: inline-block;
     padding: 0 3rem .5rem 3rem;
 
-    /*&--is-visible {
+    &--is-visible {
       display: block;
       padding-bottom: .5rem;
-    }*/
+    }
   }
 
   a {
