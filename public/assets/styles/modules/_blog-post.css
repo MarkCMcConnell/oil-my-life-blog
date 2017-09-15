@@ -1,13 +1,13 @@
 .blog-post {
-  margin-top: 4.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   width: 100%;
-  height: 400px;
   color: #fff;
   position: relative;
+  max-height: 400px;
 
   @mixin atMedium {
-    margin-top: 4.5rem;
+    margin-top: 6rem;
     margin-bottom: 3.75rem;
   }
 
@@ -16,24 +16,41 @@
     max-height: 400px;
   }
 
-  &__text {
+  &__title-container {
+    text-align: center;
+    font-size: 1rem;
+    background-color: #fff;
+    width: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     position: absolute;
     top: 100%;
-    left: 10%;
+    left: 0;
     transform: translateY(-50%);
-    text-align: center;
-    background-color: #fff;
-    width: 60%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 90%;
+
+    @mixin atMedium {
+      left: 10%;
+      width: 70%
+    }
 
     &__title {
       font-weight: 700;
       font-size: 1rem;
       color: #000;
 
+      @mixin atMedium {
+        font-size: 1.2rem;
+      }
+
       @mixin atLarge {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
     }
+  }
+
+  &__link {
+    color: $mainGreen;
+    text-decoration: underline;
+    font-weight: 700;
   }
 }
