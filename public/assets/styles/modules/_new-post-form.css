@@ -1,0 +1,39 @@
+.new-post-form {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  &__input {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+
+    & > textarea {
+      height: 515px;
+    }
+  }
+
+  &__input-field {
+    width: 100%;
+    line-height: 1.5;
+    padding: 10px 12px;
+    border: 2px solid $mainGreen;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  &__submit {
+    background-color: transparent;
+    color: $mainGreen;
+    font-size: 1.3rem;
+    border: 3px solid $mainGreen;
+    border-radius: 10px;
+    padding: .5rem 1.2rem;
+    transition: all .3s ease;
+    transform: scale(1);
+
+    &:hover {
+      background-color: $mainGreen;
+      color: #fff;
+      transform: scale(1.2);
+    }
+  }
+}

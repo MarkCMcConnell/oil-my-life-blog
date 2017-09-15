@@ -1,13 +1,5 @@
 <% include partials/header %>
-
-    <%# Most recent blog in hero format %>
-    <div class="wrapper wrapper--p-top">
-      <div class="header">
-        <img class="header__image" src="/assets/images/test.png" />
-        <div class="header__text">
-          <h1 class="header__text__title">For Moms And Better Health</h1>
-        </div>
-      </div>
+  <% include partials/top-section %>
 
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
@@ -17,11 +9,11 @@
           <div class="recent-post card">
             <div class="row">
               <div class="recent-post__left-side">
-                <img class="recent-post__left-side__image" src='<%= post.image %>' />
+                <img class="recent-post__left-side__image" src='<%= posts.image %>' />
               </div>
               <div class="recent-post__right-side">
                 <div class="recent-post__right-side__text">
-                  <h4 class="recent-post__right-side__title"><%= post.title %></h4>
+                  <h4 class="recent-post__right-side__title"><%= posts.title %></h4>
                   <p class="recent-post__right-side__snippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </div>
               </div>
@@ -54,10 +46,8 @@
             </div>
           </div>
         </div>
-        <div class="row__medium-4">
-          <%# Second column for archoved posts and tags %>
-          <% include partials/sidebar %>
-        </div>
+        <%# Second column for archoved posts and tags %>
+        <% include partials/sidebar %>
       </div>
     </div>
 
