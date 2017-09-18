@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 // Posts Schema
 var postSchema = new mongoose.Schema({
   title: String,
-  imageLarge: String,
-  imageSmall: String,
+  image: String,
+  // imageSmall: String,
   content: String,
   author: {
     id: {
@@ -19,7 +19,7 @@ var postSchema = new mongoose.Schema({
         ref: 'Comment'
       }
     ]
-  }
+
 });
 
 module.exports = mongoose.model('Post', postSchema);
