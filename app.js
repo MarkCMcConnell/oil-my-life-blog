@@ -33,18 +33,18 @@ app.get('/', function(req, res) {
 // Posts Routes
 // ================
 
-// INDEX
+// Posts INDEX
 app.get('/posts', function(req, res) {
   Post.find({}, function(err, allPosts) {
     if (err) {
       console.log(err.toString());
     } else {
-      res.render('landing', {posts: allPosts});
+      res.render('posts/index', {posts: allPosts});
     }
   });
 });
 
-// CREATE
+// Posts CREATE
 app.post('/posts', function(req, res) {
   var title = req.body.title;
   var image = req.body.image;
@@ -58,24 +58,24 @@ app.post('/posts', function(req, res) {
       console.log(newPost);
     }
   });
-  res.redirect('/');
+  res.redirect('/posts');
 });
 
-// NEW
+// Posts NEW
 app.get('/posts/new', function(req, res) {
   res.render('posts/new');
 });
 
-// SHOW
-// app.get('posts/:id', function(req, res) {
-//   Post.findById(req.params.id).exec(function(err, foundPost) {
-//     if (err) {
-//       console.log(err.toString());
-//     } else {
-//       res.render('posts/show', {post: foundPost});
-//     }
-//   });
-// });
+// Posts SHOW
+app.get('posts/:id', function(req, res) {
+  Post.findById(req.params.id).exec(function(err, foundPost) {
+    if (err) {
+      console.log(err.toString());
+    } else {
+      res.render('posts/show', {post: foundPost});
+    }
+  });
+});
 
 app.listen(5000, process.env.IP, function() {
   console.log('Server started.');

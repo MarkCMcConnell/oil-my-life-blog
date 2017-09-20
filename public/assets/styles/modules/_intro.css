@@ -1,0 +1,27 @@
+.intro {
+  background-image: url('../../assets/images/sean-mcauliffe-12857.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 97vh;
+  position: relative;
+
+  &__motto {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    font-size: 2.5rem;
+
+    &__text {
+      font-size: 2.5rem;
+      
+      @mixin atMedium {
+        font-size: 3.5rem;
+      }
+    }
+
+  }
+}

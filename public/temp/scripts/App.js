@@ -109,7 +109,6 @@ var MobileMenu = function () {
     key: 'events',
     value: function events() {
       this.menuIcon.onclick = this.toggleMenu.bind(this);
-      console.log('boo');
     }
   }, {
     key: 'toggleMenu',

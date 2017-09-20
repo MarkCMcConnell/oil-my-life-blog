@@ -3,7 +3,7 @@
   ul {
     margin: 0;
     padding: 0;
-    background-color: rgba($mainPurple, .75);
+    background-color: rgba(#fff, .85);
     text-decoration: none;
 
     @mixin atMedium {
@@ -23,7 +23,7 @@
 
   a {
     display: block;
-    color: #fff;
+    color: #000;
     font-size: 1.25rem;
     transition: transform .3s ease-out;
     transform: scale(1);

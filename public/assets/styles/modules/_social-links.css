@@ -14,10 +14,6 @@
     @mixin atMedium {
       width: 20%;
     }
-
-    & > a {
-
-    }
   }
 
   &__link {

@@ -480,6 +480,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .wrapper {
   max-width: 1200px;
   padding-left: 20px;
@@ -504,6 +508,8 @@ a {
 .site-header {
   text-align: center;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 1;
 }
@@ -518,13 +524,13 @@ a {
   }
 
 .site-header__top-wrapper {
-    background-color: #7f7fcc;
+    background-color: #fff;
     margin: 0;
     padding: 0;
   }
 
 .site-header__title {
-    color: #fff;
+    color: #000;
     margin: 0;
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -539,7 +545,9 @@ a {
 
 .site-header__menu-content {
     opacity: 0;
-    z-index: -2;
+    z-index: -15;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
     -webkit-transition: all .3s ease-out;
     transition: all .3s ease-out;
   }
@@ -550,13 +558,17 @@ a {
       display: block;
       opacity: 1;
       z-index: 1;
-      background-color: #7f7fcc
+      background-color: #fff;
+      -webkit-transform: translateY(0);
+              transform: translateY(0)
   }
   }
 
 .site-header__menu-content--is-visible {
       opacity: 1;
       z-index: 5;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
 
 .site-header__btn-container {
@@ -575,6 +587,14 @@ a {
   }
   }
 
+@media (min-width: 800px) {
+
+.site-header__btn-container--show-at-medium {
+        opacity: 1;
+        z-index: 2
+    }
+  }
+
 /* Hamburger button and transition from
   Brad Schiff - Udemy Git a Web Developer Job: Modern Workflow*/
 
@@ -587,7 +607,7 @@ a {
     right: 20px;
   }
 
-@media (min-width: 800px) {
+@media (min-width: 1010px) {
 
 .site-header__menu-icon {
       display: none
@@ -601,7 +621,7 @@ a {
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #fff;
+      background-color: #7FCC7F;
       -webkit-transform-origin: 0 0;
               transform-origin: 0 0;
       -webkit-transition: -webkit-transform .3s ease-out;
@@ -616,7 +636,7 @@ a {
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #fff;
+      background-color: #7FCC7F;
       -webkit-transform: all .3s ease-out;
               transform: all .3s ease-out;
       -webkit-transform-origin: 0 50%;
@@ -630,7 +650,7 @@ a {
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: #fff;
+      background-color: #7FCC7F;
       -webkit-transform-origin: 0 100%;
               transform-origin: 0 100%;
       -webkit-transition: -webkit-transform .3s ease-out;
@@ -656,14 +676,14 @@ a {
     }
 
 .site-header__btn {
-    color: #fff;
+    color: #7FCC7F;
     font-size: 1.75rem;
   }
 
 .primary-nav ul {
     margin: 0;
     padding: 0;
-    background-color: rgba(127,127,204, .75);
+    background-color: rgba(255,255,255, .85);
     text-decoration: none;
   }
 
@@ -686,7 +706,7 @@ a {
 
 .primary-nav a {
     display: block;
-    color: #fff;
+    color: #000;
     font-size: 1.25rem;
     -webkit-transition: -webkit-transform .3s ease-out;
     transition: -webkit-transform .3s ease-out;
@@ -996,10 +1016,6 @@ a {
   }
   }
 
-.social-links__container > a {
-
-    }
-
 .social-links__link {
     text-decoration: none;
     color: #7FCC7F;
@@ -1059,14 +1075,23 @@ a {
   }
 
 .generic-text-container {
-  font-weight: 700;
-  font-size: 1.75rem;
   text-align: center;
   margin-top: 0;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 .generic-text-container--t-margin {
     margin-top: 1.5rem;
+  }
+
+.generic-text-container--small-padding {
+    padding: 1.125rem 0;
+  }
+
+.generic-text-container--large-font {
+    font-size: 1.75rem;
+    font-weight: 700;
   }
 
 .divider {
@@ -1204,3 +1229,223 @@ a {
       -webkit-transform: scale(1.2);
               transform: scale(1.2);
     }
+
+.intro {
+  background-image: url('../../assets/images/sean-mcauliffe-12857.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 97vh;
+  position: relative;
+}
+
+.intro__motto {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    color: #fff;
+    font-size: 2.5rem;
+
+  }
+
+.intro__motto__text {
+      font-size: 2.5rem;
+    }
+
+@media (min-width: 800px) {
+
+.intro__motto__text {
+        font-size: 3.5rem
+    }
+  }
+
+.about-section {
+  color: #fff;
+  background-color: #7FCC7F;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+
+.weekly-oil {
+  height: 90vh;
+  background-image: url('../../assets/images/jonathan-pielmayer-176664.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.products-section {
+  background-color: #7f7fcc;
+  color: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 0;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.products-section__title {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+.membership {
+  height: 90vh;
+  background-image: url('  ../../assets/images/annie-spratt-40664.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-form {
+  background-color: #dd9848;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color: #fff;
+}
+
+.contact-form__flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 1.25rem;
+  }
+
+.contact-form__container {
+    width: 100%;
+  }
+
+.contact-form__image {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+.contact-form__title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+@media (min-width: 800px) {
+
+.contact-form__title {
+      font-size: 1.75rem
+  }
+  }
+
+.contact-form__form {
+    width: 400px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+@media (min-width: 1010px) {
+
+.contact-form__form {
+      width: 600px
+  }
+  }
+
+.contact-form__half {
+    margin-bottom: 1em;
+    float: none;
+  }
+
+@media (min-width: 1010px) {
+
+.contact-form__half {
+      float: left;
+      width: 48%
+  }
+  }
+
+@media (min-width: 1010px) {
+
+.contact-form__left {
+      width: 48%;
+      margin-right: 2%
+  }
+  }
+
+@media (min-width: 1010px) {
+
+.contact-form__right {
+      width: 50%
+  }
+  }
+
+.contact-form__input {
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    padding: 1em;
+    margin-top: 1em;
+    display: block;
+    width: 100%;
+  }
+
+.contact-form__input:focus {
+      -webkit-box-shadow: 0 0px 2px rgba(127,204,127, 1);
+              box-shadow: 0 0px 2px rgba(127,204,127, 1);
+    }
+
+.contact-form__textarea {
+    height: 182px;
+    padding: 1em;
+  }
+
+.contact-form__button {
+    color: #fff;
+    background-color: transparent;
+    border: 3px solid #fff;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.25rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+
+.contact-form__button:hover {
+      -webkit-box-shadow: 0 1px 1px 1px rgba(170,170,170, 0.6);
+              box-shadow: 0 1px 1px 1px rgba(170,170,170, 0.6);
+    }
+
+.disclaimer {
+  text-align: center;
+  padding: 1.25rem 18px;
+}
+
+.disclaimer__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+.generic-section {
+  margin: 0;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+}
+
+.generic-section__title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+.generic-section__text {
+    font-size: 1rem;
+    text-align: left;
+  }

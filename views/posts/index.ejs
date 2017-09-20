@@ -1,5 +1,5 @@
-<% include partials/header %>
-  <% include partials/top-section %>
+<% include ../partials/header %>
+  <% include ../partials/top-section %>
 
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
@@ -9,11 +9,11 @@
           <div class="recent-post card">
             <div class="row">
               <div class="recent-post__left-side">
-                <img class="recent-post__left-side__image" src='<%= post.image %>' />
+                <img class="recent-post__left-side__image" src='http://via.placeholder.com/350x175' />
               </div>
               <div class="recent-post__right-side">
                 <div class="recent-post__right-side__text">
-                  <h4 class="recent-post__right-side__title"><%= post.title %></h4>
+                  <h4 class="recent-post__right-side__title">Recent Post Title</h4>
                   <p class="recent-post__right-side__snippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </div>
               </div>
@@ -47,9 +47,9 @@
           </div>
         </div>
         <%# Second column for archoved posts and tags %>
-        <% include partials/sidebar %>
+        <% include ../partials/sidebar %>
       </div>
     </div>
 
-<% include partials/bottom-section %>
-<% include partials/footer %>
+<% include ../partials/bottom-section %>
+<% include ../partials/footer %>
