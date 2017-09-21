@@ -67,8 +67,8 @@ app.get('/posts/new', function(req, res) {
 });
 
 // Posts SHOW
-app.get('posts/:id', function(req, res) {
-  Post.findById(req.params.id).exec(function(err, foundPost) {
+app.get('/posts/:id', function(req, res) {
+  Post.findById(req.params.id, function(err, foundPost) {
     if (err) {
       console.log(err.toString());
     } else {

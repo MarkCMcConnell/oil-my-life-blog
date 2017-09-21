@@ -1,22 +1,22 @@
-<% include partials/header %>
+<% include ../partials/header %>
 
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top">
       <div class="blog-post">
-        <img class="blog-post__image" src="<%= posts.image %>" />
+        <img class="blog-post__image" src="<%= post.image %>" />
         <div class="blog-post__title-container">
-          <h1 class="blog-post__title-container__title"><%= posts.title %></h1>
+          <h1 class="blog-post__title-container__title"><%= post.title %></h1>
         </div>
       </div>
 
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
           <%# Post goes here %>
-          <p><%- posts.content %></p>
+          <p><%- post.content %></p>
         </div>
-        <% include partials/sidebar %>
+        <% include ../partials/sidebar %>
       </div>
     </div>
 
-<% include partials/bottom-section %>
-<% include partials/footer %>
+ <%# include ../partials/bottom-section %>
+<% include ../partials/footer %>
