@@ -11,6 +11,10 @@
     padding-top: 2rem;
   }
 
+  &--b-margin {
+    margin-bottom: 1.75rem;
+  }
+
   @mixin atMedium {
     max-width: 1200px;
   }

@@ -498,6 +498,10 @@ ul {
     padding-top: 2rem;
   }
 
+.wrapper--b-margin {
+    margin-bottom: 1.75rem;
+  }
+
 @media (min-width: 800px) {
 
 .wrapper {
@@ -974,6 +978,10 @@ ul {
   margin: 1.25rem auto 0 auto;
   -webkit-transform: scale(1);
           transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
   outline: none;
 }
 
@@ -986,6 +994,10 @@ ul {
 
 .button--b-margin {
     margin-bottom: 2rem;
+  }
+
+.button--b-radius {
+    border-radius: 10px;
   }
 
 .social-links {
@@ -1161,31 +1173,55 @@ ul {
   }
   }
 
-.blog-post__title-container__title {
-      font-weight: 700;
-      font-size: 1rem;
-      color: #000;
-    }
+.blog-post__title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+  }
 
 @media (min-width: 800px) {
 
-.blog-post__title-container__title {
-        font-size: 1.2rem
-    }
+.blog-post__title {
+      font-size: 1.2rem
+  }
   }
 
 @media (min-width: 1010px) {
 
-.blog-post__title-container__title {
-        font-size: 1.5rem
-    }
+.blog-post__title {
+      font-size: 1.5rem
+  }
   }
 
 .blog-post__link {
     color: #7FCC7F;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 700;
   }
+
+.blog-post__comments-title {
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+.blog-post__end-line {
+    border: 0;
+    border-top: 4px double #7f7fcc;
+    text-align: center;
+    margin: 1.75rem auto 0 auto;
+    width: 90%;
+  }
+
+.blog-post__end-line:after {
+      content: '\2665';
+      display: inline-block;
+      position: relative;
+      top: -15px;
+      padding: 0 10px;
+      background: #fff;
+      color: #7f7fcc;
+      font-size: 18px;
+    }
 
 .new-post-form {
   text-align: center;
@@ -1208,6 +1244,7 @@ ul {
     border: 2px solid #7FCC7F;
     border-radius: 10px;
     outline: none;
+
   }
 
 .new-post-form__submit {
@@ -1226,8 +1263,8 @@ ul {
 .new-post-form__submit:hover {
       background-color: #7FCC7F;
       color: #fff;
-      -webkit-transform: scale(1.2);
-              transform: scale(1.2);
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
     }
 
 .intro {
@@ -1449,3 +1486,31 @@ ul {
     font-size: 1rem;
     text-align: left;
   }
+
+.comment-wrapper {
+  color: #000;
+  border: 1px solid #7f7fcc;
+  border-radius: 10px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.comment-wrapper__top {
+    border-bottom: 1px solid #7FCC7F;
+    line-height: 1.2;
+  }
+
+.comment-wrapper__top::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.comment-wrapper__top > h4 {
+      float: left;
+    }
+
+.comment-wrapper__top > h4:nth-child(2) {
+      float: right;
+    }

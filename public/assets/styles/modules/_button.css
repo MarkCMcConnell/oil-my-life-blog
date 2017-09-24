@@ -7,6 +7,7 @@
   display: block;
   margin: 1.25rem auto 0 auto;
   transform: scale(1);
+  transition: transform .3s ease-out;
   outline: none;
 
   &:hover {
@@ -17,5 +18,9 @@
 
   &--b-margin {
     margin-bottom: 2rem;
+  }
+
+  &--b-radius {
+    border-radius: 10px;
   }
 }

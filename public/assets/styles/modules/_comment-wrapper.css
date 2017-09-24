@@ -1,0 +1,23 @@
+.comment-wrapper {
+  color: #000;
+  border: 1px solid $mainPurple;
+  border-radius: 10px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-bottom: 1.25rem;
+
+  &__top {
+    border-bottom: 1px solid $mainGreen;
+    line-height: 1.2;
+
+    @mixin clearfix;
+
+    & > h4 {
+      float: left;
+    }
+
+    & > h4:nth-child(2) {
+      float: right;
+    }
+  }
+}
