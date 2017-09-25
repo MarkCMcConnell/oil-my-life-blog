@@ -11,15 +11,26 @@
 
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
+          <% if (currentUser.role === 'admin') { %>
+            <div class="button__wrapper">
+              <button class="button button--b-radius button--small button--yellow">Edit</button>
+              <button class="button button--b-radius button--small button--red">Delete</button>
+            </div>
+          <% } %>
           <%# Post goes here %>
           <p><%- post.content %></p>
           <div class="blog-post__end-line"></div>
           <%# Display associated comments %>
-          <h3 class="blog-post__comments-title">Comments</h3>
+          <div class="row">
+            <h3 class="blog-post__comments-title">Comments</h3>
+            <a class="button button--b-radius button--pull-right" href="/posts/<%= post._id %>/comments/new">
+              Leave a comment
+            </a>
+          </div>
           <% post.comments.forEach(function(comment) { %>
             <div class="comment-wrapper">
               <div class="comment-wrapper__top">
-                <h4><%= comment.author %></h4>
+                <h4><%= comment.author.username %></h4>
                 <h4>Posted on: Date</h4>
               </div>
               <div class="comment-wrapper__bottom">

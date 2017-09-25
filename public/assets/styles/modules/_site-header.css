@@ -12,13 +12,13 @@
   }
 
   &__top-wrapper {
-    background-color: #fff;
+    background-color: $mainPurple;
     margin: 0;
     padding: 0;
   }
 
   &__title {
-    color: #000;
+    color: #fff;
     margin: 0;
     padding-top: .75rem;
     padding-bottom: .75rem;

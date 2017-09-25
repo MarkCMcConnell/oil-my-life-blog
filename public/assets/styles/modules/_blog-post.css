@@ -57,6 +57,7 @@
   &__comments-title {
     padding-left: 2.5rem;
     font-size: 1.5rem;
+    float: left;
   }
 
   &__end-line {

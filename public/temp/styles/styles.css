@@ -528,13 +528,13 @@ ul {
   }
 
 .site-header__top-wrapper {
-    background-color: #fff;
+    background-color: #7f7fcc;
     margin: 0;
     padding: 0;
   }
 
 .site-header__title {
-    color: #000;
+    color: #fff;
     margin: 0;
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -687,7 +687,7 @@ ul {
 .primary-nav ul {
     margin: 0;
     padding: 0;
-    background-color: rgba(255,255,255, .85);
+    background-color: #7f7fcc;
     text-decoration: none;
   }
 
@@ -708,9 +708,13 @@ ul {
       padding-bottom: .5rem;
     }
 
+.primary-nav__list-item--white {
+      color: #fff;
+    }
+
 .primary-nav a {
     display: block;
-    color: #000;
+    color: #fff;
     font-size: 1.25rem;
     -webkit-transition: -webkit-transform .3s ease-out;
     transition: -webkit-transform .3s ease-out;
@@ -976,20 +980,20 @@ ul {
   font-weight: 700;
   display: block;
   margin: 1.25rem auto 0 auto;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
   outline: none;
 }
 
 .button:hover {
     background-color: #7FCC7F;
     color: #fff;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+  }
+
+.button__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
 .button--b-margin {
@@ -998,6 +1002,39 @@ ul {
 
 .button--b-radius {
     border-radius: 10px;
+  }
+
+.button--small {
+    width: 20%;
+    margin: .5rem;
+  }
+
+.button--wide {
+    width: 50%;
+  }
+
+.button--yellow {
+    border: 3px solid #F7EB6C;
+    color: #F7EB6C;
+  }
+
+.button--yellow:hover {
+      background-color: #F7EB6C;
+      color: #fff;
+    }
+
+.button--red {
+    border: 3px solid #DB3041;
+    color: #DB3041;
+  }
+
+.button--red:hover {
+      background-color: #DB3041;
+      color: #fff;
+    }
+
+.button--pull-right {
+    float: right;
   }
 
 .social-links {
@@ -1202,6 +1239,7 @@ ul {
 .blog-post__comments-title {
     padding-left: 2.5rem;
     font-size: 1.5rem;
+    float: left;
   }
 
 .blog-post__end-line {
@@ -1244,8 +1282,11 @@ ul {
     border: 2px solid #7FCC7F;
     border-radius: 10px;
     outline: none;
-
   }
+
+.new-post-form__input-field--narrow {
+      width: 50%;
+    }
 
 .new-post-form__submit {
     background-color: transparent;
