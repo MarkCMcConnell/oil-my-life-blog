@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 1;
 
-  @mixin atMedium {
+  @mixin atLarge {
     border-radius: 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
@@ -34,7 +34,7 @@
     transform: translateY(-100px);
     transition: all .3s ease-out;
 
-    @mixin atMedium {
+    @mixin atLarge {
       display: block;
       opacity: 1;
       z-index: 1;
@@ -76,7 +76,7 @@
     height: 19px;
     position: absolute;
     z-index: 10;
-    top: 25px;
+    top: 30px;
     right: 20px;
 
     @mixin atLarge {
@@ -90,7 +90,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: $mainGreen;
+      background-color: #fff;
       transform-origin: 0 0;
       transition: transform .3s ease-out;
     }
@@ -101,7 +101,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: $mainGreen;
+      background-color: #fff;
       transform: all .3s ease-out;
       transform-origin: 0 50%;
     }
@@ -113,7 +113,7 @@
       left: 0;
       width: 20px;
       height: 3px;
-      background-color: $mainGreen;
+      background-color: #fff;
       transform-origin: 0 100%;
       transition: transform .3s ease-out;
     }

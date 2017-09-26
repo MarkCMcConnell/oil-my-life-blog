@@ -18,6 +18,12 @@
     display: flex;
   }
 
+  &--margins {
+    margin: .5rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   &--b-margin {
     margin-bottom: 2rem;
   }
@@ -27,7 +33,6 @@
   }
 
   &--small {
-    width: 20%;
     margin: .5rem;
   }
 

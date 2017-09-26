@@ -1,5 +1,6 @@
 var express = require('express'),
     router = express.Router(),
+    middleware = require('../middleware'),
     Post = require('../models/post');
 
 // Posts INDEX
@@ -14,7 +15,7 @@ router.get('/', function(req, res) {
 });
 
 // Posts CREATE
-router.post('/', isLoggedIn, isAdmin, function(req, res) {
+router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
   var title = req.body.title;
   var image = req.body.image;
   var content = req.body.content;
@@ -31,7 +32,7 @@ router.post('/', isLoggedIn, isAdmin, function(req, res) {
 });
 
 // Posts NEW
-router.get('/new', isLoggedIn, isAdmin, function(req, res) {
+router.get('/new', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
   res.render('posts/new');
 });
 
@@ -46,6 +47,35 @@ router.get('/:id', function(req, res) {
   });
 });
 
+// Posts EDIT
+router.get('/:id/edit', middleware.checkPostOwnership, function(req, res) {
+  Post.findById(req.params.id, function(err, foundPost) {
+      res.render('posts/edit', {post: foundPost});
+  });
+});
+
+router.put('/:id', middleware.checkPostOwnership, function(req, res) {
+  Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost) {
+    if(err) {
+      res.redirect('back');
+    } else {
+      res.redirect('/posts/' + req.params.id);
+    }
+  });
+});
+
+// Posts DESTROY
+router.delete('/:id', middleware.checkPostOwnership, function(req, res) {
+  Post.findByIdAndRemove(req.params.id, function(err) {
+    if(err) {
+      res.redirect('/posts');
+    } else {
+      res.redirect('/posts');
+    }
+  });
+});
+
+// middleware
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -53,11 +83,5 @@ function isLoggedIn(req, res, next) {
   res.redirect('/login');
 }
 
-function isAdmin(req, res, next) {
-  if (req.user.role == 'admin') {
-    return next();
-  }
-  res.redirect('/posts');
-}
 
 module.exports = router;

@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+  <% include ../partials/top-section %>
+
+  <div class="row row--gutters-medium">
+    <div class="row__medium-8">
+      <div class="new-post-form">
+        <h1>Edit - <%= post.title %></h1>
+
+        <form class="new-post-form__form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
+          <div class="new-post-form__input" >
+            <input class="new-post-form__input-field" type="text" name="post[title]" value="<%= post.title %>" />
+          </div>
+          <div class="new-post-form__input" >
+            <input class="new-post-form__input-field" type="text" name="post[image]" value="<%= post.image %>" />
+          </div>
+          <div class="new-post-form__input">
+            <textarea class="new-post-form__input-field" name="post[content]"><%= post.content %></textarea>
+          </div>
+          <input class="new-post-form__submit" type="submit" name="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <div class="row__medium-4">
+      <h3 class="sidebar__subtitle">Headings</h3>
+      <p class="sidebar__link"><h1>&lt;h1&gt;Text&lt;/h1&gt;</h1></p>
+      <p class="sidebar__link"><h2>&lt;h2&gt;Text&lt;/h2&gt;</h2></p>
+      <p class="sidebar__link"><h3>&lt;h3&gt;Text&lt;/h3&gt;</h3></p>
+      <p class="sidebar__link"><h4>&lt;h4&gt;Text&lt;/h4&gt;</h4></p>
+      <p class="sidebar__link"><h5>&lt;h5&gt;Text&lt;/h5&gt;</h5></p>
+      <p class="sidebar__link"><h6>&lt;h6&gt;Text&lt;/h6&gt;</h6></p>
+      <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Text Modifiers</h3>
+      <%# Example tags%>
+      <p class="sidebar__link"><strong>&lt;strong&gt;Text&lt;/strong&gt;</strong></p>
+      <p class="sidebar__link"><em>&lt;em&gt;Text&lt;/em&gt;</em></p>
+      <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Lists</h3>
+      <p class="sidebar__link">&lt;ul&gt;List Items&lt;/ul&gt;</p>
+      <p class="sidebar__link">&lt;li&gt;List Item&lt;/li&gt;</p>
+      <h3 class="sidebar__subtitle sidebar__subtitle--t-margin">Links</h3>
+      <p class="sidebar__link">&lt;a class="blog-post__link" href="URL"&gt;Link&lt;/a&gt;</p>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

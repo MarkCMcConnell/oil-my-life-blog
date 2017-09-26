@@ -3,6 +3,9 @@
 
   @mixin atMedium {
     margin-bottom: 3.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 
   @mixin clearfix;
@@ -18,6 +21,7 @@
 
     &__image {
       width: 100%;
+      height: 200px;
       vertical-align: top;
     }
   }

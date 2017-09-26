@@ -1,10 +1,11 @@
 var express = require('express'),
     router = express.Router({mergeParams: true}),
+    middleware = require('../middleware'),
     Post = require('../models/post'),
     Comment = require('../models/comment');
 
 // NEW Route
-router.get('/new', isLoggedIn, function(req, res) {
+router.get('/new', middleware.isLoggedIn, function(req, res) {
   Post.findById(req.params.id, function(err, post) {
     if (err) {
       console.log(err.toString());
@@ -15,7 +16,7 @@ router.get('/new', isLoggedIn, function(req, res) {
 });
 
 // CREATE Route
-router.post('/', isLoggedIn, function(req, res) {
+router.post('/', middleware.isLoggedIn, function(req, res) {
   Post.findById(req.params.id, function(err, post) {
     if (err) {
       console.log(err.toString());
@@ -37,11 +38,37 @@ router.post('/', isLoggedIn, function(req, res) {
   });
 });
 
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-}
+// EDIT Route
+router.get('/:comment_id/edit', middleware.checkCommentOwnership, function(req, res) {
+  Comment.findById(req.params.comment_id, function(err, foundComment) {
+    if(err) {
+      res.redirect('back');
+    } else {
+      res.render('comments/edit', {post_id: req.params.id, comment: foundComment});
+    }
+  });
+});
+
+// UPDATE Route
+router.put('/:comment_id', middleware.checkCommentOwnership, function(req, res) {
+  Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment) {
+    if(err) {
+      res.redirect('back');
+    } else {
+      res.redirect('/posts/' + req.params.id);
+    }
+  });
+});
+
+// DESTROY Route
+router.delete('/:comment_id', middleware.checkCommentOwnership, function(req, res) {
+  Comment.findByIdAndRemove(req.params.comment_id, function(err) {
+    if(err) {
+      res.redirect('back');
+    } else {
+      res.redirect('/posts/' + req.params.id);
+    }
+  });
+});
 
 module.exports = router;

@@ -5,7 +5,8 @@ var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
-
+    methodOverride = require('method-override'),
+    
     Post = require('./models/post'),
     Comment = require('./models/comment'),
     User = require('./models/user');
@@ -22,6 +23,7 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/public')); // Allow access to assets
+app.use(methodOverride('_method'));
 
 // Passport configuration
 app.use(require('express-session')({
