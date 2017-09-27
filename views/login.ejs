@@ -3,20 +3,17 @@
     <div class="row row--gutters-medium">
       <div class="row__medium-8">
         <div class="new-post-form">
-          <div class="new-post-form">
-            <h1>Login</h1>
-
-            <form class="new-post-form__form" action="/login" method="POST">
-              <div class="new-post-form__input" >
-                <input class="new-post-form__input-field new-post-form__input-field--narrow" type="text" name="username" placeholder="Username" />
-              </div>
-              <div class="new-post-form__input">
-                <input class="new-post-form__input-field new-post-form__input-field--narrow" type="password" name="password" placeholder="Password" />
-              </div>
-              <button class="button button--b-radius button--wide">Login</button>
-            </form>
-            <a href="/posts"><button class="button button--b-radius button--wide">Go Back</button></a>
-          </div>
+          <h1>Login</h1>
+          <form class="new-post-form__form" action="/login" method="POST">
+            <div class="new-post-form__input" >
+              <input class="new-post-form__input-field new-post-form__input-field--narrow" type="text" name="username" placeholder="Username" />
+            </div>
+            <div class="new-post-form__input">
+              <input class="new-post-form__input-field new-post-form__input-field--narrow" type="password" name="password" placeholder="Password" />
+            </div>
+            <button class="button button--b-radius button--wide">Login</button>
+          </form>
+          <a href="/posts"><button class="button button--b-radius button--wide">Go Back</button></a>
         </div>
       </div>
     <% include partials/sidebar %>

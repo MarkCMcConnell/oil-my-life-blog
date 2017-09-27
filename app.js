@@ -2,11 +2,12 @@ var express = require('express'),
     app = express();
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
+    flash = require('connect-flash'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
-    
+
     Post = require('./models/post'),
     Comment = require('./models/comment'),
     User = require('./models/user');
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/public')); // Allow access to assets
 app.use(methodOverride('_method'));
+app.use(flash());
 
 // Passport configuration
 app.use(require('express-session')({
@@ -40,6 +42,8 @@ passport.deserializeUser(User.deserializeUser());
 // Provides currentUser to each page
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
+  res.locals.error = req.flash('error');
+  res.locals.success = req.flash('success');
   next();
 });
 

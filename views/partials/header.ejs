@@ -16,7 +16,19 @@
  		<link rel="stylesheet" type="text/css" href="/temp/styles/styles.css">
  	</head>
  	<body>
-    <div class="site-header">
+    <header class="site-header">
+      <%# <div class="wrapper">%>
+        <% if(error && error.length > 0) { %>
+            <div class="flash-message flash-message--error" role="alert">
+              <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+          <div class="flash-message flash-message--success">
+            <%= success %>
+          </div>
+        <% } %>
+      <%# </div>%>
       <div class="site-header__top-wrapper">
         <h1 class="site-header__title">Oil My Life</h1>
         <div class="site-header__menu-icon">
@@ -41,8 +53,7 @@
                 <li class="primary-nav__list-item"><a href="/posts/new">New Post</a></li>
               <% } %>
             <% } %>
-
           </ul>
         </nav>
       </div>
-    </div>
+    </header>

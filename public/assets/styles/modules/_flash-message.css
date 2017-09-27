@@ -1,0 +1,18 @@
+.flash-message {
+  text-align: center;
+  width: 100%;
+  padding: .25rem 0;
+  font-size: 1rem;
+
+  &--error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebcccc;
+  }
+
+  &--success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 1px solid #d0e9c6;
+  }
+}

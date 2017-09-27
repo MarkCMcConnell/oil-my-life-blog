@@ -934,7 +934,6 @@ ul {
   }
 
 .header {
-  margin-top: 3em;
   margin-bottom: 1.5rem;
   width: 100%;
   max-height: 400px;
@@ -1175,7 +1174,6 @@ ul {
   }
 
 .blog-post {
-  margin-top: 3rem;
   margin-bottom: 3rem;
   width: 100%;
   color: #fff;
@@ -1564,3 +1562,22 @@ ul {
 .comment-wrapper__top > h4:nth-child(2) {
       float: right;
     }
+
+.flash-message {
+  text-align: center;
+  width: 100%;
+  padding: .25rem 0;
+  font-size: 1rem;
+}
+
+.flash-message--error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebcccc;
+  }
+
+.flash-message--success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 1px solid #d0e9c6;
+  }
