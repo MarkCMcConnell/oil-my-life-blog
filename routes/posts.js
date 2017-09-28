@@ -17,13 +17,15 @@ router.get('/', function(req, res) {
 
 // Posts CREATE
 router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
-  var title = req.body.title;
-  var image = req.body.image;
-  var content = req.body.content;
-  var author = {
+  var title = req.body.title,
+      image = req.body.image,
+      content = req.body.content,
+      author = {
     id: req.user._id,
     username: req.user.username
   };
+
+  console.log(req.body.tags);
   // Sanitize HTML
   var cleanContent = sanitizeHTML(content, {
     allowedTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'em', 'strong', 'a', 'ul', 'li', 'ol'],
