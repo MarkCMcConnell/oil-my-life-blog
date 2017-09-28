@@ -6,7 +6,7 @@
           <h2 class="generic-text-container">Recent Posts</h2>
           <%# Last three recent blog posts in smaller card format on left side column %>
           <%# Refactor to ejs loop %>
-          <% for (var i = 0; i < 3; i++) { %>
+          <% for (var i = posts.length - 1; i > posts.length - 4; i--) { %>
             <div class="recent-post card">
               <a href="/posts/<%= posts[i]._id %>">
                 <div class="row">
@@ -21,12 +21,38 @@
                 </div>
               </a>
             </div>
-          <% }; %>
+          <% } %>
         </div>
         <%# Second column for archoved posts and tags %>
         <% include ../partials/sidebar %>
       </div>
     </div>
-
-<% include ../partials/bottom-section %>
+    <div class="wrapper">
+      <div class="divider">
+        <%# Link to main app %>
+        <div class="divider__title divider__title--t-margin">
+          <h2><a class="divider__link" href="#">Join Young Living</a></h2>
+        </div>
+      </div>
+      <h2 class="generic-text-container generic-text-container--t-margin generic-text-container--large-font">Other Posts</h2>
+      <div class="row row--gutters-medium">
+      <% for (var i = posts.length - 4; i > posts.length - 6; i--) { %>
+        <div class="row__small-4 row__small-4--b-margin">
+          <a href="/posts/<%= posts[i]._id %>">
+            <div class="older-post card">
+              <img class="older-post__image" src="<%= posts[i].image %>" />
+              <div class="older-post__text">
+                <p class="older-post__tag">Post Tag</p>
+                <h3 class="older-post__title"><%= posts[i].title %></h3>
+                <p class="older-post__date">September 2017</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <% } %>
+      </div>
+      <%# Button will load another six posts then move to the end of the list
+      to allow for more to be loaded until end %>
+      <button class="button button--b-margin button--b-radius">Load More</button>
+    </div>
 <% include ../partials/footer %>

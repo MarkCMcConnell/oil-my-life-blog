@@ -7,6 +7,7 @@ var express = require('express'),
     LocalStrategy = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
+    sanitizeHTML = require('sanitize-html'),
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),

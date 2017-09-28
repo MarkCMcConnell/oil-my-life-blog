@@ -1,6 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     middleware = require('../middleware'),
+    sanitizeHTML = require('sanitize-html'),
     Post = require('../models/post');
 
 // Posts INDEX
@@ -19,13 +20,22 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
   var title = req.body.title;
   var image = req.body.image;
   var content = req.body.content;
-  var newPost = {title: title, image: image, content: content};
+  var author = {
+    id: req.user._id,
+    username: req.user.username
+  };
+  // Sanitize HTML
+  var cleanContent = sanitizeHTML(content, {
+    allowedTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'em', 'strong', 'a', 'ul', 'li', 'ol'],
+    allowedAttributes: {
+      a: ['href', 'target']
+    }
+  });
+  var newPost = {title: title, image: image, content: cleanContent, author: author};
 
   Post.create(newPost, function(err, newPost) {
     if (err) {
       console.log(err.toString());
-    } else {
-      console.log(newPost);
     }
   });
   res.redirect('/posts');
@@ -56,11 +66,7 @@ router.get('/:id/edit', middleware.checkPostOwnership, function(req, res) {
 
 router.put('/:id', middleware.checkPostOwnership, function(req, res) {
   Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost) {
-    if(err) {
-      res.redirect('back');
-    } else {
       res.redirect('/posts/' + req.params.id);
-    }
   });
 });
 

@@ -1,5 +1,5 @@
-var Post = require('../models/post'),
-    Comment = require('../models/comment');
+var Post = require('../models/post');
+var Comment = require('../models/comment');
 
 var middlewareObj = {};
 
@@ -22,17 +22,22 @@ middlewareObj.isAdmin = function isAdmin(req, res, next) {
 middlewareObj.checkPostOwnership = function(req, res, next) {
   if(req.isAuthenticated()) {
     Post.findById(req.params.id, function(err, foundPost) {
+      console.log(foundPost.author.id);
+      console.log(req.user._id);
       if(err) {
+        req.flash('error', 'Post not found');
         res.redirect('back');
       } else {
-        if(foundPost.author.id.equals(req.user._id) || req.user.role === 'admin') {
+        if(foundPost.author.id.equals(req.user._id)) {
           next();
         } else {
+          req.flash('error', 'You don\'t have perimssion to do that');
           res.redirect('back');
         }
       }
     });
   } else {
+    req.flash('error', 'You must be logged in');
     res.redirect('back');
   }
 }
@@ -43,14 +48,16 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
       if(err) {
         res.redirect('back');
       } else {
-        if(foundComment.author.id.equals(req.user._id) || req.user.role === 'admin') {
+        if(foundComment.author.id.equals(req.user._id)) {
           next();
         } else {
+          req.flash('error', 'You do not have permission');
           res.redirect('back');
         }
       }
     });
   } else {
+    req.flash('error', 'You must be logged in');
     res.redirect('back');
   }
 }
