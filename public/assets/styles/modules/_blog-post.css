@@ -47,16 +47,15 @@
     }
   }
 
+  &__tag-list {
+    color: #000;
+  }
+
   &__tag {
     font-weight: 400;
     color: $mainGreen;
     display: inline-block;
     margin-left: .5rem;
-
-    &:first-child {
-      color: #000;
-      margin-left: 0;
-    }
   }
 
   &__link {

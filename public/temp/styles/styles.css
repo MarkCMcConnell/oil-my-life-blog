@@ -864,7 +864,7 @@ ul {
     margin-bottom: 3.75rem;
     margin-left: auto;
     margin-right: auto;
-    width: 80%
+    width: 100%
 }
   }
 
@@ -909,6 +909,11 @@ ul {
    padding: .6rem;
   }
 
+.recent-post__tag {
+    margin: 0;
+    color: #000;
+  }
+
 .recent-post__title {
     color: #7FCC7F;
     font-weight: 700;
@@ -920,6 +925,11 @@ ul {
 .recent-post__title {
       font-size: 1.2rem
   }
+  }
+
+.recent-post__date {
+    margin: 0;
+    color: #000;
   }
 
 .header {
@@ -1226,17 +1236,16 @@ ul {
   }
   }
 
+.blog-post__tag-list {
+    color: #000;
+  }
+
 .blog-post__tag {
     font-weight: 400;
     color: #7FCC7F;
     display: inline-block;
     margin-left: .5rem;
   }
-
-.blog-post__tag:first-child {
-      color: #000;
-      margin-left: 0;
-    }
 
 .blog-post__link {
     color: #7FCC7F;

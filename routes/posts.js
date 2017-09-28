@@ -22,9 +22,9 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
       content = req.body.content,
       tags = req.body.tags,
       author = {
-    id: req.user._id,
-    username: req.user.username
-  };
+        id: req.user._id,
+        username: req.user.username
+      };
 
   // Sanitize HTML
   var cleanContent = sanitizeHTML(content, {

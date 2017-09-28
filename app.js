@@ -15,6 +15,7 @@ var express = require('express'),
 
 var postsRoutes = require('./routes/posts'),
     commentsRoutes = require('./routes/comments'),
+    tagsRoutes = require('./routes/tags'),
     indexRoutes = require('./routes/index');
 
 // Database connection
@@ -51,6 +52,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRoutes);
 app.use('/posts', postsRoutes);
 app.use('/posts/:id/comments', commentsRoutes);
+app.use('/tags', tagsRoutes);
 
 app.listen(5000, process.env.IP, function() {
   console.log('Server started.');

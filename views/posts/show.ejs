@@ -6,10 +6,8 @@
         <img class="blog-post__image" src="<%= post.image %>" />
         <div class="blog-post__title-container">
           <h1 class="blog-post__title"><%= post.title %></h1>
-
         </div>
       </div>
-
       <div class="row row--gutters-medium">
         <div class="row__medium-8">
           <% if(currentUser && currentUser.role === 'admin') { %>
@@ -21,12 +19,24 @@
             </div>
           <% } %>
           <%# Tags %>
-            <ul class="blog-post__tag-list">
-              <li class="blog-post__tag">Tags: </li>
+            <p class="blog-post__tag-list">Tags:
               <% for (var i = 0; i < post.tags.length; i++) { %>
-                <li class="blog-post__tag"><%= post.tags[i] %></li>
+                <span class="blog-post__tag"><%= post.tags[i] %></span>
               <% } %>
-            </ul>
+            </p>
+            <p>Posted:
+              <% var monthNames = [
+                  "January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "November", "December"
+                ];
+
+                var month = monthNames[post.postDate.getMonth()];
+                var day = post.postDate.getDate();
+                var year = post.postDate.getFullYear();
+              %>
+              <span class="blog-post__date"><%= month + ' ' + day + ', ' + year %></span>
+            </p>
+          <div class="blog-post__end-line"></div>
           <%# Post goes here %>
           <p><%- post.content %></p>
           <div class="blog-post__end-line"></div>
@@ -63,6 +73,6 @@
         <% include ../partials/sidebar %>
       </div>
     </div>
-
- <%# include ../partials/bottom-section %>
-<% include ../partials/footer %>
+    <% include ../partials/divider %>
+    <% include ../partials/disclaimer %>
+  <% include ../partials/footer %>
