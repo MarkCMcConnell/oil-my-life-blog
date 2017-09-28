@@ -6,6 +6,7 @@
         <img class="blog-post__image" src="<%= post.image %>" />
         <div class="blog-post__title-container">
           <h1 class="blog-post__title"><%= post.title %></h1>
+
         </div>
       </div>
 
@@ -19,6 +20,13 @@
               </form>
             </div>
           <% } %>
+          <%# Tags %>
+            <ul class="blog-post__tag-list">
+              <li class="blog-post__tag">Tags: </li>
+              <% for (var i = 0; i < post.tags.length; i++) { %>
+                <li class="blog-post__tag"><%= post.tags[i] %></li>
+              <% } %>
+            </ul>
           <%# Post goes here %>
           <p><%- post.content %></p>
           <div class="blog-post__end-line"></div>

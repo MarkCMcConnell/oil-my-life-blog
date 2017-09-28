@@ -20,12 +20,12 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
   var title = req.body.title,
       image = req.body.image,
       content = req.body.content,
+      tags = req.body.tags,
       author = {
     id: req.user._id,
     username: req.user.username
   };
 
-  console.log(req.body.tags);
   // Sanitize HTML
   var cleanContent = sanitizeHTML(content, {
     allowedTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'em', 'strong', 'a', 'ul', 'li', 'ol'],
@@ -33,7 +33,7 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
       a: ['href', 'target']
     }
   });
-  var newPost = {title: title, image: image, content: cleanContent, author: author};
+  var newPost = {title: title, image: image, content: cleanContent, author: author, tags: tags};
 
   Post.create(newPost, function(err, newPost) {
     if (err) {

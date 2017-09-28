@@ -11,11 +11,15 @@
               <a href="/posts/<%= posts[i]._id %>">
                 <div class="row">
                   <div class="recent-post__left-side">
-                    <img class="recent-post__left-side__image" src="<%= posts[i].image %>" />
+                    <img class="recent-post__image" src="<%= posts[i].image %>" />
                   </div>
                   <div class="recent-post__right-side">
-                    <div class="recent-post__right-side__text">
-                      <h4 class="recent-post__right-side__title"><%= posts[i].title %></h4>
+                    <div class="recent-post__text">
+                      <% for (var j = posts[i].tags.length - 1; j < posts[i].tags.length; j++) { %>
+                        <p class="recent-post__tag"><%= posts[i].tags[j] %></p>
+                      <% } %>
+                      <h3 class="recent-post__title"><%= posts[i].title %></h3>
+                      <p class="recent-post__date"><%= posts[i].postDate %></p>
                     </div>
                   </div>
                 </div>
@@ -42,9 +46,11 @@
             <div class="older-post card">
               <img class="older-post__image" src="<%= posts[i].image %>" />
               <div class="older-post__text">
-                <p class="older-post__tag">Post Tag</p>
+                <% for (var j = posts[i].tags.length - 1; j < posts[i].tags.length; j++) { %>
+                  <p class="older-post__tag"><%= posts[i].tags[j] %></p>
+                <% } %>
                 <h3 class="older-post__title"><%= posts[i].title %></h3>
-                <p class="older-post__date">September 2017</p>
+                <p class="older-post__date"><%= posts[i].postDate %></p>
               </div>
             </div>
           </a>

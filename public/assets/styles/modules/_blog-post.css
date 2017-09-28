@@ -47,6 +47,18 @@
     }
   }
 
+  &__tag {
+    font-weight: 400;
+    color: $mainGreen;
+    display: inline-block;
+    margin-left: .5rem;
+
+    &:first-child {
+      color: #000;
+      margin-left: 0;
+    }
+  }
+
   &__link {
     color: $mainGreen;
     text-decoration: none;
