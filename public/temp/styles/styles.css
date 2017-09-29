@@ -462,6 +462,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   color: #333;
+  background-color: #f7f7f7;
   line-height: 1.5;
 }
 
@@ -1525,7 +1526,29 @@ ul {
 .disclaimer__title {
     font-size: 1.75rem;
     font-weight: 700;
-    margin: 0;
+    margin: 0 auto;
+    width: 60%;
+    border-bottom: 1px solid #7FCC7F;
+  }
+
+.disclaimer__text {
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+  }
+
+@media (min-width: 800px) {
+
+.disclaimer__text {
+      width: 80%
+  }
+  }
+
+@media (min-width: 1010px) {
+
+.disclaimer__text {
+      width: 60%
+  }
   }
 
 .generic-section {
