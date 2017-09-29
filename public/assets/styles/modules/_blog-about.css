@@ -1,0 +1,16 @@
+.blog-about {
+
+  &__title {
+    text-align: center;
+  }
+
+  &__profile-pic {
+    display: block;
+    margin: auto;
+  }
+
+  &__text {
+    margin: 1.5em auto;
+    width: 80%;
+  }
+}

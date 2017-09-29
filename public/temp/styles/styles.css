@@ -1614,3 +1614,17 @@ ul {
     background-color: #dff0d8;
     border: 1px solid #d0e9c6;
   }
+
+.blog-about__title {
+    text-align: center;
+  }
+
+.blog-about__profile-pic {
+    display: block;
+    margin: auto;
+  }
+
+.blog-about__text {
+    margin: 1.5em auto;
+    width: 80%;
+  }
