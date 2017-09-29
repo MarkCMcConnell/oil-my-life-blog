@@ -51,7 +51,16 @@
             <div class="comment-wrapper">
               <div class="comment-wrapper__top">
                 <h4><%= comment.author.username %></h4>
-                <h4>Posted on: Date</h4>
+                <% var monthNames = [
+                    "January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "November", "December"
+                  ];
+
+                  var month = monthNames[post.postDate.getMonth()];
+                  var day = post.postDate.getDate();
+                  var year = post.postDate.getFullYear();
+                %>
+                <h4>Posted on: <%= month + ' ' + day + ', ' + year %></h4>
               </div>
               <div class="comment-wrapper__bottom">
                 <p><%= comment.text %></p>
