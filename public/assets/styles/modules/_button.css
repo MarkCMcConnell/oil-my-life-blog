@@ -2,12 +2,14 @@
   background-color: transparent;
   color: $mainGreen;
   border: 3px solid $mainGreen;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   padding: 12px 30px;
   font-weight: 700;
   display: block;
   margin: 1.25rem auto 0 auto;
-  transition: all .3s ease-out;
+  /*transition: all .3s ease-out;*/
   outline: none;
+  transition: all 0.3s ease-out;
 
   &:hover {
     background-color: $mainGreen;
@@ -16,6 +18,23 @@
 
   &__wrapper {
     display: flex;
+    justify-content: flex-end;
+  }
+
+  &__edit {
+    transform: scale(.75);
+
+    &:hover {
+      transform: scale(.9);
+    }
+  }
+
+  &__delete {
+    transform: scale(.75);
+
+    &:hover {
+      transform: scale(.9);
+    }
   }
 
   &--margins {
@@ -41,18 +60,21 @@
   }
 
   &--yellow {
-    border: 3px solid $mainYellow;
-    color: $mainYellow;
+    border: none;
+    background-color: $mainYellow;
+    color: #fff;
 
     &:hover {
       background-color: $mainYellow;
       color: #fff;
+
     }
   }
 
   &--red {
-    border: 3px solid $mainRed;
-    color: $mainRed;
+    background-color: $mainRed;
+    border: none;
+    color: #fff;
 
     &:hover {
       background-color: $mainRed;

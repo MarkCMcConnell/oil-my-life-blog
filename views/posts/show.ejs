@@ -8,13 +8,13 @@
           <h1 class="blog-post__title"><%= post.title %></h1>
         </div>
       </div>
-      <div class="row row--gutters-medium">
+      <div class="row row--gutters-medium row--b-margin">
         <div class="row__medium-8">
           <% if(currentUser && currentUser.role === 'admin') { %>
             <div class="button__wrapper">
-              <a href="/posts/<%= post._id %>/edit" class="button button--b-radius button--small button--yellow">Edit</a>
+              <a href="/posts/<%= post._id %>/edit" class="button button__edit button--b-radius button--small button--yellow">Edit</a>
               <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                <button class="button button--b-radius button--margins button--red">Delete</button>
+                <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
               </form>
             </div>
           <% } %>
@@ -67,11 +67,11 @@
                 <% if((currentUser && comment.author.id.equals(currentUser._id)) || (currentUser && currentUser.role === 'admin')) { %>
                   <div class="button__wrapper">
                     <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"
-                      class="button button--b-radius button--small button--yellow">
+                      class="button button__edit button--b-radius button--small button--yellow">
                       Edit
                     </a>
                     <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                      <button class="button button--b-radius button--margins button--red">Delete</button>
+                      <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
                     </form>
                   </div>
                 <% } %>

@@ -21,8 +21,6 @@ middlewareObj.isAdmin = function isAdmin(req, res, next) {
 middlewareObj.checkPostOwnership = function(req, res, next) {
   if(req.isAuthenticated()) {
     Post.findById(req.params.id, function(err, foundPost) {
-      console.log(foundPost.author.id);
-      console.log(req.user._id);
       if(err) {
         req.flash('error', 'Post not found');
         res.redirect('back');

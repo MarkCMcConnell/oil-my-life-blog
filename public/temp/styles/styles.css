@@ -761,7 +761,7 @@ ul {
     }
 
     .row--b-margin {
-      margin-bottom: .55rem;
+      margin-bottom: 1.25rem;
     }
   }
 
@@ -979,13 +979,16 @@ ul {
   background-color: transparent;
   color: #7FCC7F;
   border: 3px solid #7FCC7F;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   padding: 12px 30px;
   font-weight: 700;
   display: block;
   margin: 1.25rem auto 0 auto;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+  /*transition: all .3s ease-out;*/
   outline: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .button:hover {
@@ -997,7 +1000,30 @@ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
+
+.button__edit {
+    -webkit-transform: scale(.75);
+            transform: scale(.75);
+  }
+
+.button__edit:hover {
+      -webkit-transform: scale(.9);
+              transform: scale(.9);
+    }
+
+.button__delete {
+    -webkit-transform: scale(.75);
+            transform: scale(.75);
+  }
+
+.button__delete:hover {
+      -webkit-transform: scale(.9);
+              transform: scale(.9);
+    }
 
 .button--margins {
     margin: .5rem;
@@ -1022,18 +1048,21 @@ ul {
   }
 
 .button--yellow {
-    border: 3px solid #F7EB6C;
-    color: #F7EB6C;
+    border: none;
+    background-color: #F7EB6C;
+    color: #fff;
   }
 
 .button--yellow:hover {
       background-color: #F7EB6C;
       color: #fff;
+
     }
 
 .button--red {
-    border: 3px solid #DB3041;
-    color: #DB3041;
+    background-color: #DB3041;
+    border: none;
+    color: #fff;
   }
 
 .button--red:hover {
@@ -1083,8 +1112,8 @@ ul {
     font-size: 2rem;
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transition: .3s scale ease;
-    transition: .3s scale ease;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
   }
 
 .social-links__icon:hover {

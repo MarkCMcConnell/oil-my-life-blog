@@ -25,7 +25,7 @@
     color: $mainGreen;
     font-size: 2rem;
     transform: scale(1);
-    transition: .3s scale ease;
+    transition: all .3s ease-out;
 
     &:hover {
       color: #fff;
