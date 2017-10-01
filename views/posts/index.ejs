@@ -15,7 +15,7 @@
                   <div class="recent-post__right-side">
                     <div class="recent-post__text">
                       <% for (var j = 0; j < posts[i].tags.length ; j++) { %>
-                        <span class="recent-post__tag"><%= posts[i].tags[j] %></span>
+                        <a class="recent-post__tag" href="/tags/<%= posts[i].tags[j] %>"><%= posts[i].tags[j] %></a>
                       <% } %>
                       <h3 class="recent-post__title"><%= posts[i].title %></h3>
                       <% var monthNames = [
@@ -50,7 +50,7 @@
             <img class="older-post__image" src="<%= posts[i].image %>" />
             <div class="older-post__text">
               <% for (var j = posts[i].tags.length - 1; j < posts[i].tags.length; j++) { %>
-                <span class="older-post__tag"><%= posts[i].tags[j] %> </span>
+                <a class="older-post__tag" href="/tags/<%= posts[i].tags[j] %>"><%= posts[i].tags[j] %></a>
               <% } %>
               <h3 class="older-post__title"><%= posts[i].title %></h3>
               <% var monthNames = [

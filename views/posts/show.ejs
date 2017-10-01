@@ -21,7 +21,7 @@
           <%# Tags %>
             <p class="blog-post__tag-list">Tags:
               <% for (var i = 0; i < post.tags.length; i++) { %>
-                <span class="blog-post__tag"><%= post.tags[i] %></span>
+                <a class="blog-post__tag" href="/tags/<%= post.tags[i] %>"><%= post.tags[i] %></a>
               <% } %>
             </p>
             <p>Posted:
