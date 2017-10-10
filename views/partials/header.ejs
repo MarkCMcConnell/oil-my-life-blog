@@ -30,7 +30,6 @@
         <% } %>
       <%# </div>%>
       <div class="site-header__top-wrapper">
-        <h1 class="site-header__title">Oil My Life</h1>
         <div class="site-header__menu-icon">
           <div class="site-header__menu-icon__middle"></div>
           <%# <i class="site-header__btn fa fa-bars"></i>%>
@@ -39,10 +38,10 @@
       <%# Possibly put in links related to different tags %>
       <div id="menu-content" class="site-header__menu-content">
         <nav class="primary-nav">
-          <ul>
-            <li class="primary-nav__list-item"><a href="/">Home</a></li>
-            <li class="primary-nav__list-item"><a href="/about">About</a></li>
-            <li class="primary-nav__list-item"><a href="/posts">Posts</a></li>
+          <ul class="primary-nav__list primary-nav__list--tall">
+            <li class="primary-nav__list-item"><a href="/posts">Home</a></li>
+            <li class="primary-nav__list-item"><a href="/about">About Me</a></li>
+            <li class="primary-nav__list-item"><a href="/">Oil My Life</a></li>
             <% if(!currentUser) { %>
               <li class="primary-nav__list-item"><a href="/login">Login</a></li>
               <li class="primary-nav__list-item"><a href="/register">Register</a></li>

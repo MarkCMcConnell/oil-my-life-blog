@@ -4,7 +4,13 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 4rem;
+  background-color: $mainPurple;
   z-index: 1;
+
+  @mixin atMedium {
+    /*height: 100px;*/
+  }
 
   @mixin atLarge {
     border-radius: 0;
@@ -34,7 +40,7 @@
     transform: translateY(-100px);
     transition: all .3s ease-out;
 
-    @mixin atLarge {
+    @mixin atMedium {
       display: block;
       opacity: 1;
       z-index: 1;
@@ -76,10 +82,10 @@
     height: 19px;
     position: absolute;
     z-index: 10;
-    top: 30px;
+    top: 20px;
     right: 20px;
 
-    @mixin atLarge {
+    @mixin atMedium {
       display: none;
     }
 

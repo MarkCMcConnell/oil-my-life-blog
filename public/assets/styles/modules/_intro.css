@@ -9,7 +9,7 @@
   &__motto {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%);
     color: #fff;
@@ -17,7 +17,7 @@
 
     &__text {
       font-size: 2.5rem;
-      
+
       @mixin atMedium {
         font-size: 3.5rem;
       }
