@@ -1411,7 +1411,7 @@ ul {
 @media (min-width: 800px) {
 
 .new-post-form__input-field {
-      width: 50%
+      width: 90%
   }
   }
 
@@ -1422,6 +1422,13 @@ ul {
     border: 2px solid #7FCC7F;
     border-radius: 10px;
     outline: none;
+  }
+
+@media (min-width: 800px) {
+
+.new-post-form__textarea {
+      width: 90%
+  }
   }
 
 .new-post-form__submit {
@@ -1462,18 +1469,28 @@ ul {
             transform: translate(-50%);
     color: #fff;
     font-size: 2.5rem;
-
   }
 
-.intro__motto__text {
-      font-size: 2.5rem;
-    }
+.intro__tagline {
+    font-size: 2.5rem;
+  }
 
 @media (min-width: 800px) {
 
-.intro__motto__text {
-        font-size: 3.5rem
-    }
+.intro__tagline {
+      font-size: 3.5rem
+  }
+  }
+
+.intro__span {
+    display: block;
+  }
+
+@media (min-width: 800px) {
+
+.intro__span {
+      display: inline
+  }
   }
 
 .about-section {

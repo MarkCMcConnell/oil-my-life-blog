@@ -14,14 +14,21 @@
     transform: translate(-50%);
     color: #fff;
     font-size: 2.5rem;
+  }
 
-    &__text {
-      font-size: 2.5rem;
+  &__tagline {
+    font-size: 2.5rem;
 
-      @mixin atMedium {
-        font-size: 3.5rem;
-      }
+    @mixin atMedium {
+      font-size: 3.5rem;
     }
+  }
 
+  &__span {
+    display: block;
+
+    @mixin atMedium {
+      display: inline;
+    }
   }
 }

@@ -27,7 +27,7 @@
             <p>Posted:
               <% var monthNames = [
                   "January", "February", "March", "April", "May", "June",
-                  "July", "August", "September", "November", "December"
+                  "July", "August", "September", "October", "November", "December"
                 ];
 
                 var month = monthNames[post.postDate.getMonth()];
@@ -53,12 +53,12 @@
                 <h4><%= comment.author.username %></h4>
                 <% var monthNames = [
                     "January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "November", "December"
+                    "July", "August", "September", "October", "November", "December"
                   ];
 
-                  var month = monthNames[post.postDate.getMonth()];
-                  var day = post.postDate.getDate();
-                  var year = post.postDate.getFullYear();
+                  var month = monthNames[comment.commentDate.getMonth()];
+                  var day = comment.commentDate.getDate();
+                  var year = comment.commentDate.getFullYear();
                 %>
                 <h4>Posted on: <%= month + ' ' + day + ', ' + year %></h4>
               </div>
