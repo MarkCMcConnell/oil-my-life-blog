@@ -17,7 +17,9 @@
                       <% for (var j = 0; j < posts[i].tags.length ; j++) { %>
                         <a class="recent-post__tag" href="/tags/<%= posts[i].tags[j] %>"><%= posts[i].tags[j] %></a>
                       <% } %>
-                      <h3 class="recent-post__title"><%= posts[i].title %></h3>
+                      <a href="/posts/<%= posts[i]._id %>">
+                        <h3 class="recent-post__title"><%= posts[i].title %></h3>
+                      </a>
                       <% var monthNames = [
                           "January", "February", "March", "April", "May", "June",
                           "July", "August", "September", "November", "December"
