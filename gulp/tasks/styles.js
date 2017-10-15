@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     nested = require('postcss-nested'),
     mixins = require('postcss-mixins'),
     cssImport = require('postcss-import'),
-    hexrgba = require('postcss-hexrgba');
+    hexrgba = require('postcss-hexrgba'),
+    uglifycss = require('gulp-uglifycss');
 
 gulp.task('styles', function() {
   console.log('styles working');
@@ -17,5 +18,9 @@ gulp.task('styles', function() {
     console.log(errorInfo.toString());
     this.emit('end');
   })
-  .pipe(gulp.dest('./public/temp/styles'));
+  .pipe(uglifycss({
+    "maxLineLen": 80,
+    "uglyComments": true
+  }))
+  .pipe(gulp.dest('./public/dist/styles'));
 });

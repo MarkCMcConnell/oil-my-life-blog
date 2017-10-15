@@ -4,7 +4,7 @@ var express = require('express'),
     User = require('../models/user');
 
 router.get('/', function(req, res) {
-  res.render('posts');
+  res.render('landing');
 });
 
 // About page
