@@ -8,6 +8,7 @@ var express = require('express'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
     sanitizeHTML = require('sanitize-html'),
+    helmet = require('helmet'),
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),
