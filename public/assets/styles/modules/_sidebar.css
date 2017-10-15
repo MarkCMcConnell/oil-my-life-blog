@@ -6,6 +6,10 @@
     display: block;
   }
 
+  &__profile-pic {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
   &__subtitle {
     color: $mainGreen;
     border-bottom: 1px solid $mainGreen;

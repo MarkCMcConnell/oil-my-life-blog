@@ -1,6 +1,6 @@
 .primary-nav {
 
-  ul {
+  &__list {
     margin: 0;
     padding: 0;
     background-color: $mainPurple;
@@ -9,11 +9,19 @@
     @mixin atMedium {
       background-color: none;
     }
+
+    &--tall {
+      padding: 1rem;
+    }
   }
 
   &__list-item {
     display: inline-block;
-    padding: 0 3rem .5rem 3rem;
+    padding: 0 1.5rem .5rem 1.5rem;
+
+    @mixin atLarge {
+      padding: 0 3rem .5rem 3rem;
+    }
 
     &--is-visible {
       display: block;

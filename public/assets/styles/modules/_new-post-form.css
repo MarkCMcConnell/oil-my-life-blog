@@ -19,8 +19,21 @@
     border-radius: 10px;
     outline: none;
 
-    &--narrow {
-      width: 50%;
+    @mixin atMedium {
+      width: 90%;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    line-height: 1.5;
+    padding: 10px 12px;
+    border: 2px solid $mainGreen;
+    border-radius: 10px;
+    outline: none;
+
+    @mixin atMedium {
+      width: 90%;
     }
   }
 

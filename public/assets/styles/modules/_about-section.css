@@ -1,6 +1,25 @@
 .about-section {
-  color: #fff;
+  color: #000;
   background-color: $mainGreen;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding-bottom: 1.75rem;
 
+  &__title {
+    font-weight: 400;
+
+    @mixin atMedium {
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    text-align: left;
+    margin: 0 auto;
+    padding-bottom: .875rem;
+
+    @mixin atMedium {
+      width: 60%;
+    }
+  }
 }
