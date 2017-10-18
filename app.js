@@ -20,7 +20,7 @@ var postsRoutes = require('./routes/posts'),
     indexRoutes = require('./routes/index');
 
 // Database connection
-mongoose.connect('mongodb://localhost/oil_my_life_blog', {useMongoClient: true});
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds053156.mlab.com:53156/oil-my-life-blog', {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings
