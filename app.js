@@ -8,7 +8,6 @@ var express = require('express'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
     sanitizeHTML = require('sanitize-html'),
-    helmet = require('helmet'),
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),
@@ -19,8 +18,11 @@ var postsRoutes = require('./routes/posts'),
     tagsRoutes = require('./routes/tags'),
     indexRoutes = require('./routes/index');
 
+var dbUri = 'mongodb://login:password@ds053156.mlab.com:53156/oil-my-life-blog',
+    localDb = 'mongodb://localhost/oil_my_life_blog';
+
 // Database connection
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds053156.mlab.com:53156/oil-my-life-blog', {useMongoClient: true});
+mongoose.connect(dbUri, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings
