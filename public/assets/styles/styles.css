@@ -20,12 +20,13 @@
 @import 'modules/_new-post-form';
 @import 'modules/_intro';
 @import 'modules/_about-section';
-@import 'modules/_weekly-oil';
-@import 'modules/_products-section';
-@import 'modules/_membership';
+@import 'modules/_starter-kit-section';
+@import 'modules/_join-section';
+@import 'modules/_membership-section';
 @import 'modules/_contact-form';
 @import 'modules/_disclaimer';
 @import 'modules/_generic-section';
 @import 'modules/_comment-wrapper';
 @import 'modules/_flash-message';
 @import 'modules/_blog-about';
+@import 'modules/_anchor-id';

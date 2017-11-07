@@ -1,0 +1,8 @@
+.anchor-id {
+  &__span {
+    display: block;
+    height: 6.25rem;
+    margin-top: -6.25rem;
+    visibility: hidden;
+  }
+}
