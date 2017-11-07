@@ -18,11 +18,11 @@ var postsRoutes = require('./routes/posts'),
     tagsRoutes = require('./routes/tags'),
     indexRoutes = require('./routes/index');
 
-var dbUri = 'mongodb://login:password@ds053156.mlab.com:53156/oil-my-life-blog',
+var dbUri = 'mongodb://username:password@ds053156.mlab.com:53156/oil-my-life-blog',
     localDb = 'mongodb://localhost/oil_my_life_blog';
 
 // Database connection
-mongoose.connect(dbUri, {useMongoClient: true});
+mongoose.connect(localDb, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings

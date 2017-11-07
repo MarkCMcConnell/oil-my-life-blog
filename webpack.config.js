@@ -1,7 +1,7 @@
 
 // Resolves paths
 const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -21,13 +21,10 @@ module.exports = {
         },
         test: /\.js$/,
         exclude: /node_modules/
-      },
-      {
-        loader: 'style-loader'
       }
     ]
-  },
-  plugins: [
-    new UglifyJSPlugin()
-  ]
+  }
+  // plugins: [
+  //   new UglifyJSPlugin()
+  // ]
 }
