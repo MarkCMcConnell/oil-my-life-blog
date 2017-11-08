@@ -1,0 +1,28 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__links {
+    position: absolute;
+    display: none;
+    width: auto;
+    margin-top: .5rem;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 10;
+  }
+
+  &__link {
+    color: $mainGreen;
+    display: block;
+    padding: 1.2rem 1.2rem;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &:hover .dropdown__links {
+    display: block;
+  }
+}

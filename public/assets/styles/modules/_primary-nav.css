@@ -33,16 +33,13 @@
     }
   }
 
-  a {
+  &__link {
     display: block;
     color: #fff;
     font-size: 1.25rem;
-    transition: transform .3s ease-out;
-    transform: scale(1);
 
     &:hover {
       color: $mainGreen;
-      transform: scale(1.2);
     }
   }
 }

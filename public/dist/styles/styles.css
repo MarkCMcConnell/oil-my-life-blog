@@ -40,8 +40,7 @@ img{max-width:100%;height:auto}a{text-decoration:none}ul{list-style:none}.wrappe
 @media(min-width:800px){.primary-nav__list{background-color:none}}.primary-nav__list--tall{padding:1rem}
 .primary-nav__list-item{display:inline-block;padding:0 1.5rem .5rem 1.5rem}@media(min-width:1010px){.primary-nav__list-item{padding:0 3rem .5rem 3rem}
 }.primary-nav__list-item--is-visible{display:block;padding-bottom:.5rem}.primary-nav__list-item--white{color:#fff}
-.primary-nav a{display:block;color:#fff;font-size:1.25rem;-webkit-transition:-webkit-transform .3s ease-out;transition:-webkit-transform .3s ease-out;transition:transform .3s ease-out;transition:transform .3s ease-out,-webkit-transform .3s ease-out;-webkit-transform:scale(1);transform:scale(1)}
-.primary-nav a:hover{color:#7fcc7f;-webkit-transform:scale(1.2);transform:scale(1.2)}
+.primary-nav__link{display:block;color:#fff;font-size:1.25rem}.primary-nav__link:hover{color:#7fcc7f}
 .row::after{content:"";clear:both;display:table}.row--gutters{margin-right:-20px}
 .row--gutters>div{padding-right:20px}.row--gutters-medium{margin-right:-60px}.row--gutters-medium>div{padding-right:60px}
 @media(min-width:600px){.row__small-4{float:left;width:33.33%}.row--b-margin{margin-bottom:1.25rem}
@@ -114,10 +113,13 @@ img{max-width:100%;height:auto}a{text-decoration:none}ul{list-style:none}.wrappe
 .join-section{background-color:#7f7fcc;color:#fff;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);margin:0}
 .membership-section{height:90vh;background-image:url('  ../../assets/images/annie-spratt-40664.jpg');background-size:cover;background-attachment:fixed}
 .contact-form{background-color:#dd9848;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);color:#fff}
-.contact-form__flex-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-ms-flex-line-pack:center;align-content:center;padding:1.25rem}
-.contact-form__container{width:100%}.contact-form__image{width:150px;height:auto;display:block;margin:0 auto;border:3px solid #fff;border-radius:50%;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24)}
-.contact-form__title{font-size:1.25rem;margin:0}@media(min-width:800px){.contact-form__title{font-size:1.75rem}
-}.contact-form__form{width:400px;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}
+.contact-form__flex-container{-ms-flex-line-pack:center;align-content:center;padding:1.25rem}
+@media(min-width:1010px){.contact-form__flex-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;max-width:60%;margin:0 auto}
+}.contact-form__container{width:100%;text-align:center;padding-left:.5rem;padding-right:.5rem}
+.contact-form__image{width:150px;height:auto;display:block;margin:0 auto;border:3px solid #fff;border-radius:50%;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24)}
+.contact-form__distributor-logo{width:calc(100% - 1.5rem)}@media(min-width:800px){.contact-form__distributor-logo{max-width:350px}
+}.contact-form__title{font-size:1.25rem;margin:0}@media(min-width:800px){.contact-form__title{font-size:1.75rem}
+}.contact-form__form{padding:.75rem;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}
 @media(min-width:1010px){.contact-form__form{width:600px}}.contact-form__half{margin-bottom:1em;float:none}
 @media(min-width:1010px){.contact-form__half{float:left;width:48%}}@media(min-width:1010px){.contact-form__left{width:48%;margin-right:2%}
 }@media(min-width:1010px){.contact-form__right{width:50%}}.contact-form__input{border:0;border-radius:8px;outline:0;padding:1em;margin-top:1em;display:block;width:100%}
@@ -135,3 +137,6 @@ img{max-width:100%;height:auto}a{text-decoration:none}ul{list-style:none}.wrappe
 .flash-message--success{color:#3c763d;background-color:#dff0d8;border:1px solid #d0e9c6}
 .blog-about__title{text-align:center}.blog-about__profile-pic{display:block;margin:auto}
 .blog-about__text{margin:1.5em auto;width:80%}.anchor-id__span{display:block;height:6.25rem;margin-top:-6.25rem;visibility:hidden}
+.dropdown{position:relative;display:inline-block}.dropdown__links{position:absolute;display:none;width:auto;margin-top:.5rem;background-color:#fff;-webkit-box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);z-index:10}
+.dropdown__link{color:#7fcc7f;display:block;padding:1.2rem 1.2rem}.dropdown__link:hover{background-color:#f0f0f0}
+.dropdown:hover .dropdown__links{display:block}

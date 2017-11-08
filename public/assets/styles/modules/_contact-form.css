@@ -4,14 +4,22 @@
   color: #fff;
 
   &__flex-container {
-    display: flex;
-    justify-content: space-around;
     align-content: center;
     padding: 1.25rem;
+
+    @mixin atLarge {
+      display: flex;
+      justify-content: space-around;
+      max-width: 60%;
+      margin: 0 auto;
+    }
   }
 
   &__container {
     width: 100%;
+    text-align: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
 
   &__image {
@@ -24,6 +32,14 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
 
+  &__distributor-logo {
+    width: calc(100% - 1.5rem);
+
+    @mixin atMedium {
+      max-width: 350px;
+    }
+  }
+
   &__title {
     font-size: 1.25rem;
     margin: 0;
@@ -34,7 +50,7 @@
   }
 
   &__form {
-    width: 400px;
+    padding: .75rem;
     text-align: center;
     box-sizing: border-box;
 
