@@ -1,5 +1,6 @@
 var express = require('express'),
     router = express.Router(),
+    nodeMailer = require('nodemailer'),
     passport = require('passport'),
     User = require('../models/user');
 
@@ -43,11 +44,45 @@ router.post('/login', passport.authenticate('local',
   }), function(req, res) {
 });
 
-// logout reoute
+// Logout route
 router.get('/logout', function(req, res) {
   req.logout();
   req.flash('success', 'Logged out successfully');
   res.redirect('/posts');
+});
+
+// Send mail route
+router.post('/send', function(req, res) {
+  var sender = req.body.emailName,
+      email = req.body.emailAddress,
+      subject = req.body.emailSubject,
+      message = req.body.emailMessage;
+
+  // Configuration of mail sender
+  var transporter = nodeMailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'Oilmylife2017@gmail.com',
+      pass: 'My02boys!'
+    }
+  });
+
+  // Building e-mail message
+  var mailOptions = {
+    from: email,
+    to: 'Oilmylife2017@gmail.com',
+    subject: subject,
+    html: '<h2>' + sender + '</h2><h3>' + email + '</h3><p>' + message + '</p>'
+  };
+
+  // Send mail and handle errors
+  transporter.sendMail(mailOptions, function(error, info) {
+    if(error) {
+      return console.log(error.toString());
+    }
+    console.log('Message sent:', info.messageId, info.response);
+    res.redirect('/');
+  });
 });
 
 module.exports = router;

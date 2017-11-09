@@ -1,5 +1,6 @@
 var express = require('express'),
-    app = express();
+    app = express(),
+    nodeMailer = require('nodemailer'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     flash = require('connect-flash'),
@@ -26,7 +27,7 @@ mongoose.connect(localDb, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/public')); // Allow access to assets
 app.use(methodOverride('_method'));

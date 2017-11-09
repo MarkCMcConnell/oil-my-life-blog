@@ -48,20 +48,20 @@
         <img class="contact-form__distributor-logo" src="/assets/images/independentdistributorlogo.jpg" alt="Young Living Independent Distributor Logo" />
       </div>
       <div class="contact-form__container">
-        <form class="contact-form__form">
-          <div class="row">
+        <div class="row">
+          <form class="contact-form__form" action="/send" method="POST" role="form">
             <h2 class="contact-form__title">Contact Me</h2>
             <div class="contact-form__half contact-form__left">
-              <input class="contact-form__input" id="name" type="text" placeholder="Name" maxlength="30" required />
-              <input class="contact-form__input" id="email" type="email" placeholder="E-mail Address" maxlength="30" required />
-              <input class="contact-form__input" id="email" type="text" placeholder="Subject" maxlength="30" required />
+              <input class="contact-form__input" name="emailName" type="text" placeholder="Name" required />
+              <input class="contact-form__input" name="emailAddress" type="email" placeholder="E-mail Address" required />
+              <input class="contact-form__input" name="emailSubject" type="text" placeholder="Subject" required />
             </div>
             <div class="contact-form__half contact-form__right">
-              <textarea class="contact-form__input contact-form__textarea" id="message" placeholder="Message"></textarea>
+              <textarea class="contact-form__input contact-form__textarea" name="emailMessage" placeholder="Message"></textarea>
             </div>
-            <input class="contact-form__input contact-form__button" type="submit" name="action" value="Submit" />
-          </div>
-        </form>
+            <input class="contact-form__input contact-form__button" type="submit" name="submit" value="Send" />
+          </form>
+        </div>
       </div>
     </div>
   </section>
