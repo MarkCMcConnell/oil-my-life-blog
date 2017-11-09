@@ -2,6 +2,7 @@ var express = require('express'),
     router = express.Router(),
     nodeMailer = require('nodemailer'),
     passport = require('passport'),
+    sanitizeHTML = require('sanitize-html'),
     User = require('../models/user');
 
 router.get('/', function(req, res) {
@@ -58,6 +59,13 @@ router.post('/send', function(req, res) {
       subject = req.body.emailSubject,
       message = req.body.emailMessage;
 
+  var cleanMessage = sanitizeHTML(message, {
+    allowedTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'em', 'strong', 'a', 'ul', 'li', 'ol'],
+    allowedAttributes: {
+      a: ['href', 'target']
+    }
+  });
+
   // Configuration of mail sender
   var transporter = nodeMailer.createTransport({
     service: 'Gmail',
@@ -72,7 +80,7 @@ router.post('/send', function(req, res) {
     from: email,
     to: 'Oilmylife2017@gmail.com',
     subject: subject,
-    html: '<h2>' + sender + '</h2><h3>' + email + '</h3><p>' + message + '</p>'
+    html: '<h2>' + sender + '</h2><h3>' + email + '</h3><p>' + cleanMessage + '</p>'
   };
 
   // Send mail and handle errors

@@ -33,6 +33,7 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
       a: ['href', 'target']
     }
   });
+
   var newPost = {title: title, image: image, content: cleanContent, author: author, tags: tags};
 
   Post.create(newPost, function(err, newPost) {
