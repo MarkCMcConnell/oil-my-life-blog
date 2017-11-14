@@ -109,8 +109,8 @@ img{max-width:100%;height:auto}a{text-decoration:none}ul{list-style:none}.wrappe
 .about-section{color:#000;background-color:#7fcc7f;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);padding-bottom:1.75rem}
 .about-section__title{font-weight:400}@media(min-width:800px){.about-section__title{font-weight:700}
 }.about-section__text{font-size:1.125rem;text-align:left;margin:0 auto;padding-bottom:.875rem}
-@media(min-width:800px){.about-section__text{width:60%}}.starter-kit-section{height:90vh;background-image:url('../../assets/images/jonathan-pielmayer-176664.jpg');background-size:cover;background-attachment:fixed}
-.join-section{background-color:#7f7fcc;color:#fff;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);margin:0}
+@media(min-width:800px){.about-section__text{width:60%}}.starter-kit-section{height:auto;background-image:url('../../assets/images/jonathan-pielmayer-176664.jpg');background-size:cover;background-attachment:fixed;position:relative}
+@media(min-width:800px){.starter-kit-section{height:90vh}}.join-section{background-color:#7f7fcc;color:#fff;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);margin:0}
 .membership-section{height:90vh;background-image:url('  ../../assets/images/annie-spratt-40664.jpg');background-size:cover;background-attachment:fixed}
 .contact-form{background-color:#dd9848;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);color:#fff}
 .contact-form__flex-container{-ms-flex-line-pack:center;align-content:center;padding:1.25rem}
@@ -139,4 +139,9 @@ img{max-width:100%;height:auto}a{text-decoration:none}ul{list-style:none}.wrappe
 .blog-about__text{margin:1.5em auto;width:80%}.anchor-id__span{display:block;height:6.25rem;margin-top:-6.25rem;visibility:hidden}
 .dropdown{position:relative;display:inline-block}.dropdown__links{position:absolute;display:none;width:auto;margin-top:.5rem;background-color:#fff;-webkit-box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);z-index:10}
 .dropdown__link{color:#7fcc7f;display:block;padding:1.2rem 1.2rem}.dropdown__link:hover{background-color:#f0f0f0}
-.dropdown:hover .dropdown__links{display:block}
+.dropdown:hover .dropdown__links{display:block}.carousel{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:distribute;justify-content:space-around;margin-top:6rem;margin-left:auto;margin-right:auto;width:100%}
+@media(min-width:1010px){.carousel{max-width:60%}}.carousel__card{background-color:#fff;color:#7f7fcc;width:80%;border-radius:7px;outline:2px solid #7fcc7f;outline-offset:-10px;-webkit-box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);box-shadow:0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23)}
+@media(min-width:1010px){.carousel__card{height:450px}}.carousel__items{color:#7f7fcc;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:distribute;justify-content:space-around;margin-bottom:1.5rem}
+.carousel__controls{opacity:.6}.carousel__list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.carousel__item-title{text-align:center;text-decoration:underline;-webkit-text-decoration-color:#7fcc7f;text-decoration-color:#7fcc7f;padding-top:.75rem}
+.carousel__list-item{padding:.5rem 0}.carousel__list-item:before{content:"•";padding-right:10px;color:#7fcc7f}

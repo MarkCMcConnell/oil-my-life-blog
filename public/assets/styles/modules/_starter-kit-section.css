@@ -1,6 +1,11 @@
 .starter-kit-section {
-  height: 90vh;
+  height: auto;
   background-image: url('../../assets/images/jonathan-pielmayer-176664.jpg');
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+
+  @mixin atMedium {
+    height: 90vh;
+  }
 }

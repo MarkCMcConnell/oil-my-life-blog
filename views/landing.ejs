@@ -34,36 +34,7 @@
     <h2 class="generic-section__title">Join Young Living</h2>
   </section>
 
-  <span class="anchor-id__span" id="starter-kit"></span>
-  <section class="starter-kit-section generic-section">
-    <h2 class="generic-section__title">Starter Kit Essential Oils</h2>
-  </section>
-
-  <span class="anchor-id__span" id="contact-form"></span>
-  <section class="contact-form row">
-    <div class="contact-form__flex-container">
-      <div class="contact-form__container">
-        <img class="contact-form__image" src="/assets/images/landing_profile.jpg" />
-        <p>Wife, mommy of two boys, Licensed Clinical Social Worker on a journey to change her life one oil at a time.</p>
-        <img class="contact-form__distributor-logo" src="/assets/images/independentdistributorlogo.jpg" alt="Young Living Independent Distributor Logo" />
-      </div>
-      <div class="contact-form__container">
-        <div class="row">
-          <form class="contact-form__form" action="/send" method="POST" role="form">
-            <h2 class="contact-form__title">Contact Me</h2>
-            <div class="contact-form__half contact-form__left">
-              <input class="contact-form__input" name="emailName" type="text" placeholder="Name" required />
-              <input class="contact-form__input" name="emailAddress" type="email" placeholder="E-mail Address" required />
-              <input class="contact-form__input" name="emailSubject" type="text" placeholder="Subject" required />
-            </div>
-            <div class="contact-form__half contact-form__right">
-              <textarea class="contact-form__input contact-form__textarea" name="emailMessage" placeholder="Message"></textarea>
-            </div>
-            <input class="contact-form__input contact-form__button" type="submit" name="submit" value="Send" />
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<% include partials/landing-starter-kit %>
+<% include partials/landing-contact %>
 <% include partials/disclaimer %>
 <% include partials/footer %>

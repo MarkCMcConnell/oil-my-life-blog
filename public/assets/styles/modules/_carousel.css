@@ -1,0 +1,65 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @mixin atLarge {
+    max-width: 60%;
+  }
+
+  &__card {
+    background-color: #fff;
+    color: $mainPurple;
+    width: 80%;
+    border-radius: 7px;
+    outline: 2px solid $mainGreen;
+    outline-offset: -10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    @mixin atLarge {
+      height: 450px;
+    }
+  }
+
+  &__items {
+    color: $mainPurple;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+  }
+
+  &__controls {
+    opacity: .6;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item-title {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: $mainGreen;
+    padding-top: .75rem;
+  }
+
+  &__list-item {
+    padding: .5rem 0;
+
+    &:before {
+      content: "•";
+      padding-right: 10px;
+      color: $mainGreen;
+    }
+  }
+}
