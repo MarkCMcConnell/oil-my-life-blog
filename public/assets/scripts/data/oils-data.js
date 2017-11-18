@@ -36,8 +36,8 @@ module.exports = [
     ]
   },
   {
-    name: 'Lavendar',
-    image: '/assets/images/oils/Lavendar.jpg',
+    name: 'Lavender',
+    image: '/assets/images/oils/Lavender.jpg',
     imageAlt: 'Image of Lavendar essential oil bottle',
     information: [
       'Fresh, floral, clean, and calm aroma',
@@ -127,7 +127,7 @@ module.exports = [
   },
   {
     name: 'PanAway',
-    image: '/assets/images/oils/Panway.jpg',
+    image: '/assets/images/oils/Panaway.jpg',
     imageAlt: 'Image of Pan Away essential oil bottle',
     information: [
       'Popular blend formulated by Young Living Founder D. Gary Young',

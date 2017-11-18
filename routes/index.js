@@ -3,11 +3,11 @@ var express = require('express'),
     nodeMailer = require('nodemailer'),
     passport = require('passport'),
     sanitizeHTML = require('sanitize-html'),
-    User = require('../models/user'),
-    Oils = require('../public/assets/scripts/modules/oils-data');
+    oils = require('../public/assets/scripts/data/oils-data'),
+    User = require('../models/user');
 
 router.get('/', function(req, res) {
-  res.render('landing', {oils: Oils});
+  res.render('landing', {oils: oils});
 });
 
 // About page

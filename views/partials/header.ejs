@@ -26,25 +26,21 @@
  	</head>
  	<body>
     <header class="site-header">
-      <%# <div class="wrapper">%>
-        <% if(error && error.length > 0) { %>
-            <div class="flash-message flash-message--error" role="alert">
-              <%= error %>
-            </div>
-        <% } %>
-        <% if(success && success.length > 0) { %>
-          <div class="flash-message flash-message--success">
-            <%= success %>
+      <% if(error && error.length > 0) { %>
+          <div class="flash-message flash-message--error" role="alert">
+            <%= error %>
           </div>
-        <% } %>
-      <%# </div>%>
+      <% } %>
+      <% if(success && success.length > 0) { %>
+        <div class="flash-message flash-message--success">
+          <%= success %>
+        </div>
+      <% } %>
       <div class="site-header__top-wrapper">
         <div class="site-header__menu-icon">
           <div class="site-header__menu-icon__middle"></div>
-          <%# <i class="site-header__btn fa fa-bars"></i>%>
         </div>
       </div>
-      <%# Possibly put in links related to different tags %>
       <div id="menu-content" class="site-header__menu-content">
         <nav class="primary-nav">
           <ul class="primary-nav__list primary-nav__list--tall">
