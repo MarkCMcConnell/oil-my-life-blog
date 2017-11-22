@@ -83,6 +83,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mobileMenu = new _MobileMenu2.default();
 var carousel = new _Carousel2.default();
 
+// Add in auto hiding and showing navbar on scroll
+window.onscroll = function () {
+  navDisplayAtTop();
+};
+
+function navDisplayAtTop() {
+  var navbarHeight = 122;
+  var currentPos = document.body.scrollTop || document.documentElement.scrollTop;
+  var aboutPos = document.getElementById('about').offsetTop - navbarHeight;
+  var nav = document.getElementsByClassName('site-header')[0];
+
+  if (currentPos >= aboutPos) {
+    nav.style.top = '-82px';
+  } else {
+    nav.style.top = '0';
+  }
+}
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {

@@ -7,6 +7,7 @@
   height: 4rem;
   background-color: $mainPurple;
   z-index: 1;
+  transition: top 0.4s ease-out;
 
   @mixin atMedium {
     /*height: 100px;*/

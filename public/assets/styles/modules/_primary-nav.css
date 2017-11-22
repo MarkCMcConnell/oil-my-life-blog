@@ -17,10 +17,10 @@
 
   &__list-item {
     display: inline-block;
-    padding: 0 1.5rem .5rem 1.5rem;
+    padding: 0 1.125rem .5rem 1.125rem;
 
     @mixin atLarge {
-      padding: 0 3rem .5rem 3rem;
+      padding: 0 2rem .5rem 2rem;
     }
 
     &--is-visible {
@@ -37,6 +37,7 @@
     display: block;
     color: #fff;
     font-size: 1.25rem;
+    font-weight: 400;
 
     &:hover {
       color: $mainGreen;
