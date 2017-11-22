@@ -1,11 +1,10 @@
 class Carousel {
   constructor() {
-    this.leftArrow = document.querySelector('.fa-chevron-left');
-    this.rightArrow = document.querySelector('.fa-chevron-right');
+    this.leftArrow = document.querySelector('.fa-chevron-circle-left');
+    this.rightArrow = document.querySelector('.fa-chevron-circle-right');
+    this.container = document.getElementsByClassName('carousel__container')[0];
     this.slides = document.getElementsByClassName('carousel__card');
-    this.container = document.querySelector('.carousel');
-    this.total = this.slides.length - 1;
-    this.current = 0;
+    this.current = 1;
     this.interval;
 
     this.events();
@@ -24,24 +23,33 @@ class Carousel {
     this.play();
   }
 
+  changeSlides() {
+    this.slides[this.current].style.left = '-100%';
+    this.slides[this.current].nextElementSibling.style.left = '0';
+    this.container.appendChild(this.container.firstChild);
+    this.container.lastElementChild.style.left = '100%';
+  }
+
   slideLeft() {
-    this.slides[this.current].classList.remove('carousel__card--visible');
-    this.current === 0 ? this.current = this.total : this.current = this.current - 1;
-    this.slides[this.current].classList.add('carousel__card--visible');
+    if(this.slides[this.current].style.left === '-100%') {
+      this.slides[this.current].style.left = '0';
+      this.slides[this.current].nextElementSibling.style.left = '100%';
+    } else {
+      this.container.insertBefore(this.container.lastChild, this.container.firstChild);
+      this.container.firstElementChild.style.left = '-100%';
+      this.container.firstElementChild.style.left = '0';
+      this.container.firstElementChild.nextElementSibling.style.left = '100%';
+    }
   }
 
   slideRight() {
-    this.slides[this.current].classList.remove('carousel__card--visible');
-    this.current === this.total ? this.current = 0 : this.current = this.current + 1;
-    this.slides[this.current].classList.add('carousel__card--visible');
+    this.changeSlides();
   }
 
   play() {
-      this.interval = setInterval(function() {
-      this.slides[this.current].classList.remove('carousel__card--visible');
-      this.current === this.total ? this.current = 0 : this.current = this.current + 1;
-      setTimeout(() => {this.slides[this.current].classList.add('carousel__card--visible')}, 1000);
-    }.bind(this), 6000);
+    this.interval = setInterval(function() {
+      this.changeSlides();
+    }.bind(this), 3000);
   }
 
   pause() {

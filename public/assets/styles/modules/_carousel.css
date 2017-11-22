@@ -1,39 +1,39 @@
 .carousel {
-  /*display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-around;*/
-  position: relative;
-  margin-top: 3rem;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0;
   width: 100%;
+  overflow: hidden;
   height: 33rem;
+  margin-top: 3rem;
 
   @mixin atLarge {
-    max-width: 60%;
+    max-width: 50%;
+  }
+
+  &__container {
+    width: 100%;
+    height: 27rem;
+    position: relative;
   }
 
   &__card {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 100%;
+    transition: left .7s ease-out;
     background-color: #fff;
     color: $mainPurple;
-    width: 80%;
-    min-height: 450px;
+    min-width: 100%;
+    height: 100%;
     border-radius: 7px;
     outline: 2px solid $mainGreen;
     outline-offset: -10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    opacity: 0;
-    transition: opacity 1s linear;
 
-    &--visible {
-      opacity: 1;
+    &--current {
+      left: 0;
     }
   }
 
@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-around;
     margin-bottom: 1.5rem;
 
@@ -51,9 +50,45 @@
     }
   }
 
+  &__item-title {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: $mainGreen;
+    padding-top: .5rem;
+  }
+
+  &__image-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  &__image {
+    width: 250px;
+    height: 250px;
+  }
+
+  &__detail-list {
+    width: calc(100% - 20px);
+  }
+
+  &__detail-list-item {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1.25rem;
+
+    &:before {
+      content: "•";
+      padding-right: 10px;
+      color: $mainGreen;
+    }
+  }
+
   &__controls {
+    color: $mainPurple;
     opacity: .6;
     cursor: pointer;
+    display: none;
 
     &--left {
       position: absolute;
@@ -68,39 +103,9 @@
       right: 0;
       transform: translateY(-50%);
     }
-  }
 
-  &__item-title {
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: $mainGreen;
-    padding-top: .75rem;
-  }
-
-  &__image-container {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  &__image {
-    width: 250px;
-    height: 250px;
-  }
-
-  &__list {
-    width: calc(100% - 20px);
-  }
-
-  &__list-item {
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 1rem;
-    padding-right: 1.25rem;
-
-    &:before {
-      content: "•";
-      padding-right: 10px;
-      color: $mainGreen;
+    @mixin atLarge {
+      display: block;
     }
   }
 }
