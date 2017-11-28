@@ -1,23 +1,16 @@
 import MobileMenu from './modules/MobileMenu';
 import Carousel from './modules/Carousel';
+import Accordion from './modules/Accordion';
+import NavDisplay from './modules/NavDisplay';
 
 var mobileMenu = new MobileMenu();
 var carousel = new Carousel();
 
 // Add in auto hiding and showing navbar on scroll
 window.onscroll = function() {
-  navDisplayAtTop();
+  NavDisplay();
 }
 
-function navDisplayAtTop() {
-  let navbarHeight = 122;
-  let currentPos = document.body.scrollTop || document.documentElement.scrollTop;
-  let aboutPos = document.getElementById('about').offsetTop - navbarHeight;
-  let nav = document.getElementsByClassName('site-header')[0];
-
-  if (currentPos >= aboutPos) {
-      nav.style.top = '-82px';
-  } else {
-    nav.style.top = '0';
-  }
+window.onload = function() {
+  Accordion();
 }

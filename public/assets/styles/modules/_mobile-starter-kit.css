@@ -1,0 +1,78 @@
+.mobile-starter-kit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.25rem 0;
+  display: block;
+
+  @mixin atMedium {
+    display: none;
+  }
+
+  &__accordion {
+    background-color: $mainPurple;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__name {
+    text-align: left;
+    font-size: 1.1em;
+    padding: .75rem;
+    margin: 0;
+    padding: .25rem .75rem;
+
+    &:after {
+      float: right;
+      color: #fff;
+      margin-right: 5px;
+      content:'\002B';
+      font-size: 1.2rem;
+    }
+
+    &--active {
+      background-color: $darkPurple;
+
+      &:after {
+        content: '\2212';
+      }
+    }
+  }
+
+  &__contents {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 .25rem;
+    background-color: $mainGreen;
+    transition: 0.3s ease-out;
+  }
+
+  &__content-item {
+    padding: 0 .75rem;
+
+    &:before {
+      content: "•";
+      padding-right: 10px;
+      color: $mainPurple;
+    }
+  }
+
+  &__controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #000;
+    cursor: pointer;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+
+  &__expand {
+    font-size: .9em;
+  }
+
+  &__collapse {
+    font-size: .9em;
+  }
+}
