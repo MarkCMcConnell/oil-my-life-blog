@@ -2,14 +2,35 @@ class MobileMenu {
   constructor() {
     this.primaryNav = document.getElementsByClassName('primary-nav')[0];
     this.menuIcon = document.getElementsByClassName('site-header__menu-icon')[0];
+    this.closeIcon = document.getElementsByClassName('site-header__menu-icon--close-x')[0];
     this.menuContent = document.getElementById('menu-content');
     this.listItem = document.getElementsByClassName('primary-nav__list-item');
+    this.dropdown = document.getElementsByClassName('dropdown__link');
     // Make toggleMenu available on load
     this.events();
   }
 
   events() {
     this.menuIcon.onclick = this.toggleMenu.bind(this);
+    this.listItem.onclick = this.toggleMenu.bind(this);
+    this.dropdown.onclick = this.toggleMenu.bind(this);
+
+    this.closeMenuBind();
+  }
+
+  closeMenuBind() {
+    // Add listener to close menu when single links are clicked
+    // Prevent closing menu when a dropdown menu is selected
+    for(let i = 0; i < this.listItem.length; i++) {
+      if(!this.listItem[i].classList.contains('dropdown')) {
+        this.listItem[i].addEventListener('click', () => this.toggleMenu());
+      }
+    }
+
+    // Add listener for when dropdown menu item is clicked
+    for(let i = 0; i < this.dropdown.length; i++) {
+      this.dropdown[i].addEventListener('click', () => this.toggleMenu());
+    }
   }
 
   toggleMenu() {

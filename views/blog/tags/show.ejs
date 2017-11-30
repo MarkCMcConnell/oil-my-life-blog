@@ -1,11 +1,11 @@
-<% include ../partials/header %>
-  <% include ../partials/top-section %>
+<% include ../../partials/header %>
+  <% include ../../partials/top-section %>
     <div class="row row--gutters-medium">
       <div class="row__medium-8">
         <h2 class="generic-text-container">Posts tagged with <%= tag %></h2>
         <% for(var i = 0; i < posts.length; i++) { %>
           <div class="recent-post card">
-            <a href="/posts/<%= posts[i]._id %>">
+            <a href="/blog/posts/<%= posts[i]._id %>">
               <div class="row">
                 <div class="recent-post__left-side">
                   <img class="recent-post__image" src="<%= posts[i].image %>" />
@@ -33,7 +33,7 @@
           </div>
         <% } %>
       </div>
-    <% include ../partials/sidebar %>
+    <% include ../../partials/sidebar %>
   </div>
 </div>
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

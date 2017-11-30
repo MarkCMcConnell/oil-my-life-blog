@@ -10,7 +10,7 @@ router.get('/new', middleware.isLoggedIn, function(req, res) {
     if (err) {
       console.log(err.toString());
     } else {
-      res.render('comments/new', {post: post});
+      res.render('blog/comments/new', {post: post});
     }
   });
 });
@@ -20,7 +20,7 @@ router.post('/', middleware.isLoggedIn, function(req, res) {
   Post.findById(req.params.id, function(err, post) {
     if (err) {
       console.log(err.toString());
-      res.redirect('/posts');
+      res.redirect('blog/posts');
     } else {
       Comment.create(req.body.comment, function(err, comment) {
         if (err) {
@@ -31,7 +31,7 @@ router.post('/', middleware.isLoggedIn, function(req, res) {
           comment.save();
           post.comments.push(comment);
           post.save();
-          res.redirect('/posts/' + post._id);
+          res.redirect('blog/posts/' + post._id);
         }
       });
     }
@@ -55,7 +55,7 @@ router.put('/:comment_id', middleware.checkCommentOwnership, function(req, res) 
     if(err) {
       res.redirect('back');
     } else {
-      res.redirect('/posts/' + req.params.id);
+      res.redirect('blog/posts/' + req.params.id);
     }
   });
 });
@@ -66,7 +66,7 @@ router.delete('/:comment_id', middleware.checkCommentOwnership, function(req, re
     if(err) {
       res.redirect('back');
     } else {
-      res.redirect('/posts/' + req.params.id);
+      res.redirect('blog/posts/' + req.params.id);
     }
   });
 });

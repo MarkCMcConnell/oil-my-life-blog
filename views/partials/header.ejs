@@ -37,15 +37,17 @@
         </div>
       <% } %>
       <div class="site-header__top-wrapper">
-        <div class="site-header__menu-icon">
+        <h1 class="site-header__title">Oil My Life</h1>
+        <div class="site-header__menu-icon site-header__menu-icon--show-at-medium">
           <div class="site-header__menu-icon__middle"></div>
         </div>
       </div>
       <div id="menu-content" class="site-header__menu-content">
         <nav class="primary-nav">
-          <ul class="primary-nav__list primary-nav__list--tall">
-            <li class="primary-nav__list-item"><a class="primary-nav__link" href="/posts">Home</a></li>
-            <li class="primary-nav__list-item"><a class="primary-nav__link" href="/about">About Me</a></li>
+          <ul class="primary-nav__list">
+            <li class="primary-nav__list-item"><a class="primary-nav__link" href="/">Home</a></li>
+            <li class="primary-nav__list-item"><a class="primary-nav__link" href="/blog/posts">Blog</a></li>
+            <li class="primary-nav__list-item"><a class="primary-nav__link" href="/blog/about">About Me</a></li>
             <%# <li class="primary-nav__list-item"><a href="/">Oil My Life</a></li>%>
             <% if(!currentUser) { %>
               <li class="primary-nav__list-item"><a class="primary-nav__link" href="/login">Login</a></li>
@@ -54,7 +56,7 @@
               <li class="primary-nav__list-item"><a class="primary-nav__link" href="/logout">Logout</a></li>
               <li class="primary-nav__list-item primary-nav__list-item--white">Signed In As <%= currentUser.username %></li>
               <% if(currentUser.role === 'admin') { %>
-                <li class="primary-nav__list-item"><a class="primary-nav__link" href="/posts/new">New Post</a></li>
+                <li class="primary-nav__list-item"><a class="primary-nav__link" href="/blog/posts/new">New Post</a></li>
               <% } %>
             <% } %>
           </ul>

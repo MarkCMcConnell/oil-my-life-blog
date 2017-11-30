@@ -1,15 +1,28 @@
 export default function NavDisplay() {
   let navbarHeight = 122;
   let currentPos = document.body.scrollTop || document.documentElement.scrollTop;
-  let aboutPos = document.getElementById('about').offsetTop - navbarHeight;
   let nav = document.getElementsByClassName('site-header')[0];
   let menu = document.getElementsByClassName('primary-nav__list')[0];
 
-  if (currentPos >= aboutPos) {
-      nav.style.top = '-82px';
-      menu.style.opacity = '.8';
+  // Determine which menu is being used based on page url
+  // Then determine when to hide title
+  if(window.location.href.indexOf('blog') <= 0) {
+    let aboutPos = document.getElementById('about').offsetTop - navbarHeight;
+
+    if(screen.width >= 800) {
+      if (currentPos >= aboutPos) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
   } else {
-    nav.style.top = '0';
-    menu.style.opacity = '1';
+    if(screen.width >= 800) {
+      if (currentPos >= 100) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
   }
 }

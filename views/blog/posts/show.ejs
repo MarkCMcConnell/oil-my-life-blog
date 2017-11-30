@@ -1,4 +1,4 @@
-<% include ../partials/header %>
+<% include ../../partials/header %>
 
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top wrapper--b-margin">
@@ -12,8 +12,8 @@
         <div class="row__medium-8">
           <% if(currentUser && currentUser.role === 'admin') { %>
             <div class="button__wrapper">
-              <a href="/posts/<%= post._id %>/edit" class="button button__edit button--b-radius button--small button--yellow">Edit</a>
-              <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+              <a href="/blog/posts/<%= post._id %>/edit" class="button button__edit button--b-radius button--small button--yellow">Edit</a>
+              <form action="/blog/posts/<%= post._id %>?_method=DELETE" method="POST">
                 <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
               </form>
             </div>
@@ -21,7 +21,7 @@
           <%# Tags %>
             <p class="blog-post__tag-list">Tags:
               <% for (var i = 0; i < post.tags.length; i++) { %>
-                <a class="blog-post__tag" href="/tags/<%= post.tags[i] %>"><%= post.tags[i] %></a>
+                <a class="blog-post__tag" href="/blog/tags/<%= post.tags[i] %>"><%= post.tags[i] %></a>
               <% } %>
             </p>
             <p>Posted:
@@ -43,7 +43,7 @@
           <%# Display associated comments %>
           <div class="row">
             <h3 class="blog-post__comments-title">Comments</h3>
-            <a class="button button--b-radius button--b-margin button--pull-right" href="/posts/<%= post._id %>/comments/new">
+            <a class="button button--b-radius button--b-margin button--pull-right" href="/blog/posts/<%= post._id %>/comments/new">
               Leave a comment
             </a>
           </div>
@@ -66,11 +66,11 @@
                 <p><%= comment.text %></p>
                 <% if((currentUser && comment.author.id.equals(currentUser._id)) || (currentUser && currentUser.role === 'admin')) { %>
                   <div class="button__wrapper">
-                    <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"
+                    <a href="/blog/posts/<%= post._id %>/comments/<%= comment._id %>/edit"
                       class="button button__edit button--b-radius button--small button--yellow">
                       Edit
                     </a>
-                    <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                    <form action="/blog/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                       <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
                     </form>
                   </div>
@@ -79,8 +79,8 @@
             </div>
           <% }); %>
         </div>
-        <% include ../partials/sidebar %>
+        <% include ../../partials/sidebar %>
       </div>
-    <% include ../partials/divider %>
-    <% include ../partials/disclaimer %>
-  <% include ../partials/footer %>
+    <% include ../../partials/divider %>
+    <% include ../../partials/disclaimer %>
+  <% include ../../partials/footer %>

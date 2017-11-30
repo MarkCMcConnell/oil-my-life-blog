@@ -54,9 +54,9 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRoutes);
-app.use('/posts', postsRoutes);
-app.use('/posts/:id/comments', commentsRoutes);
-app.use('/tags', tagsRoutes);
+app.use('/blog/posts', postsRoutes);
+app.use('/blog/posts/:id/comments', commentsRoutes);
+app.use('/blog/tags', tagsRoutes);
 
 app.listen(5000, process.env.IP, function() {
   console.log('Server started.');

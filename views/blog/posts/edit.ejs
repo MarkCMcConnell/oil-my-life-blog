@@ -1,12 +1,12 @@
-<% include ../partials/header %>
-  <% include ../partials/top-section %>
+<% include ../../partials/header %>
+  <% include ../../partials/top-section %>
 
   <div class="row row--gutters-medium row--b-margin">
     <div class="row__medium-8">
       <div class="new-post-form">
         <h1>Edit - <%= post.title %></h1>
 
-        <form class="new-post-form__form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <form class="new-post-form__form" action="/blog/posts/<%= post._id %>?_method=PUT" method="POST">
           <div class="new-post-form__input" >
             <input class="new-post-form__input-field" type="text" name="post[title]" value="<%= post.title %>" />
           </div>
@@ -42,4 +42,4 @@
 </div>
 
 
-<% include ../partials/footer %>
+<% include ../../partials/footer %>

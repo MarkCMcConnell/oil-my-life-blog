@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 });
 
 // About page
-router.get('/about', function(req, res) {
+router.get('/blog/about', function(req, res) {
   res.render('about');
 });
 
@@ -29,7 +29,7 @@ router.post('/register', function(req, res){
       return res.render('register');
     }
     passport.authenticate('local')(req, res, function() {
-      res.redirect('/posts');
+      res.redirect('blog/posts');
     });
   });
 });
@@ -41,7 +41,7 @@ router.get('/login', function(req, res) {
 
 router.post('/login', passport.authenticate('local',
   {
-    successRedirect: '/posts',
+    successRedirect: '/blog/posts',
     failureRedirect: '/login'
   }), function(req, res) {
 });
@@ -50,7 +50,7 @@ router.post('/login', passport.authenticate('local',
 router.get('/logout', function(req, res) {
   req.logout();
   req.flash('success', 'Logged out successfully');
-  res.redirect('/posts');
+  res.redirect('blog/posts');
 });
 
 // Send mail route

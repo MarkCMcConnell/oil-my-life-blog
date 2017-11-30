@@ -74,30 +74,37 @@ var _MobileMenu = __webpack_require__(1);
 
 var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
-var _Carousel = __webpack_require__(2);
-
-var _Carousel2 = _interopRequireDefault(_Carousel);
-
-var _Accordion = __webpack_require__(3);
+var _Accordion = __webpack_require__(2);
 
 var _Accordion2 = _interopRequireDefault(_Accordion);
 
-var _NavDisplay = __webpack_require__(4);
+var _NavDisplay = __webpack_require__(3);
 
 var _NavDisplay2 = _interopRequireDefault(_NavDisplay);
 
+var _Carousel = __webpack_require__(4);
+
+var _Carousel2 = _interopRequireDefault(_Carousel);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var urlTest = 'blog';
+
 var mobileMenu = new _MobileMenu2.default();
-var carousel = new _Carousel2.default();
+
+// Determine if current page is within the blog site
+// If it is not, run the below functions
+if (window.location.href.indexOf(urlTest) <= 0) {
+  var carousel = new _Carousel2.default();
+
+  window.onload = function () {
+    (0, _Accordion2.default)();
+  };
+}
 
 // Add in auto hiding and showing navbar on scroll
 window.onscroll = function () {
   (0, _NavDisplay2.default)();
-};
-
-window.onload = function () {
-  (0, _Accordion2.default)();
 };
 
 /***/ }),
@@ -121,8 +128,10 @@ var MobileMenu = function () {
 
     this.primaryNav = document.getElementsByClassName('primary-nav')[0];
     this.menuIcon = document.getElementsByClassName('site-header__menu-icon')[0];
+    this.closeIcon = document.getElementsByClassName('site-header__menu-icon--close-x')[0];
     this.menuContent = document.getElementById('menu-content');
     this.listItem = document.getElementsByClassName('primary-nav__list-item');
+    this.dropdown = document.getElementsByClassName('dropdown__link');
     // Make toggleMenu available on load
     this.events();
   }
@@ -131,6 +140,32 @@ var MobileMenu = function () {
     key: 'events',
     value: function events() {
       this.menuIcon.onclick = this.toggleMenu.bind(this);
+      this.listItem.onclick = this.toggleMenu.bind(this);
+      this.dropdown.onclick = this.toggleMenu.bind(this);
+
+      this.closeMenuBind();
+    }
+  }, {
+    key: 'closeMenuBind',
+    value: function closeMenuBind() {
+      var _this = this;
+
+      // Add listener to close menu when single links are clicked
+      // Prevent closing menu when a dropdown menu is selected
+      for (var i = 0; i < this.listItem.length; i++) {
+        if (!this.listItem[i].classList.contains('dropdown')) {
+          this.listItem[i].addEventListener('click', function () {
+            return _this.toggleMenu();
+          });
+        }
+      }
+
+      // Add listener for when dropdown menu item is clicked
+      for (var _i = 0; _i < this.dropdown.length; _i++) {
+        this.dropdown[_i].addEventListener('click', function () {
+          return _this.toggleMenu();
+        });
+      }
     }
   }, {
     key: 'toggleMenu',
@@ -151,6 +186,94 @@ exports.default = MobileMenu;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Accordion;
+function Accordion() {
+  var accordion = document.getElementsByClassName('mobile-starter-kit__name');
+  var accordionExpand = document.getElementsByClassName('mobile-starter-kit__expand')[0];
+  var accordionCollapse = document.getElementsByClassName('mobile-starter-kit__collapse')[0];
+
+  for (var i = 0; i < accordion.length; i++) {
+    accordion[i].onclick = function () {
+      this.classList.toggle('mobile-starter-kit__name--active');
+
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    };
+  }
+
+  if (accordionExpand) {
+    accordionExpand.addEventListener('click', function () {
+      for (var _i = 0; _i < accordion.length; _i++) {
+        accordion[_i].classList.add('mobile-starter-kit__name--active');
+        accordion[_i].nextElementSibling.style.maxHeight = accordion[_i].nextElementSibling.scrollHeight + 'px';
+      }
+    });
+  }
+
+  if (accordionCollapse) {
+    accordionCollapse.addEventListener('click', function () {
+      for (var _i2 = 0; _i2 < accordion.length; _i2++) {
+        accordion[_i2].classList.remove('mobile-starter-kit__name--active');
+        accordion[_i2].nextElementSibling.style.maxHeight = null;
+      }
+    });
+  }
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = NavDisplay;
+function NavDisplay() {
+  var navbarHeight = 122;
+  var currentPos = document.body.scrollTop || document.documentElement.scrollTop;
+  var nav = document.getElementsByClassName('site-header')[0];
+  var menu = document.getElementsByClassName('primary-nav__list')[0];
+
+  // Determine which menu is being used based on page url
+  // Then determine when to hide title
+  if (window.location.href.indexOf('blog') <= 0) {
+    var aboutPos = document.getElementById('about').offsetTop - navbarHeight;
+
+    if (screen.width >= 800) {
+      if (currentPos >= aboutPos) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
+  } else {
+    if (screen.width >= 800) {
+      if (currentPos >= 100) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
+  }
+}
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,81 +414,6 @@ var Carousel = function () {
 }();
 
 exports.default = Carousel;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Accordion;
-function Accordion() {
-  var accordion = document.getElementsByClassName('mobile-starter-kit__name');
-  var accordionExpand = document.getElementsByClassName('mobile-starter-kit__expand')[0];
-  var accordionCollapse = document.getElementsByClassName('mobile-starter-kit__collapse')[0];
-
-  for (var i = 0; i < accordion.length; i++) {
-    accordion[i].onclick = function () {
-      this.classList.toggle('mobile-starter-kit__name--active');
-
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    };
-  }
-
-  if (accordionExpand) {
-    accordionExpand.addEventListener('click', function () {
-      for (var _i = 0; _i < accordion.length; _i++) {
-        accordion[_i].classList.add('mobile-starter-kit__name--active');
-        accordion[_i].nextElementSibling.style.maxHeight = accordion[_i].nextElementSibling.scrollHeight + 'px';
-      }
-    });
-  }
-
-  if (accordionCollapse) {
-    accordionCollapse.addEventListener('click', function () {
-      for (var _i2 = 0; _i2 < accordion.length; _i2++) {
-        accordion[_i2].classList.remove('mobile-starter-kit__name--active');
-        accordion[_i2].nextElementSibling.style.maxHeight = null;
-      }
-    });
-  }
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = NavDisplay;
-function NavDisplay() {
-  var navbarHeight = 122;
-  var currentPos = document.body.scrollTop || document.documentElement.scrollTop;
-  var aboutPos = document.getElementById('about').offsetTop - navbarHeight;
-  var nav = document.getElementsByClassName('site-header')[0];
-  var menu = document.getElementsByClassName('primary-nav__list')[0];
-
-  if (currentPos >= aboutPos) {
-    nav.style.top = '-82px';
-    menu.style.opacity = '.8';
-  } else {
-    nav.style.top = '0';
-    menu.style.opacity = '1';
-  }
-}
 
 /***/ })
 /******/ ]);

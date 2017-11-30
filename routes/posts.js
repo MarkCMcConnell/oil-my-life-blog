@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
     if (err) {
       console.log(err.toString());
     } else {
-      res.render('posts/index', {posts: allPosts});
+      res.render('blog/posts/index', {posts: allPosts});
     }
   });
 });
@@ -41,12 +41,12 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
       console.log(err.toString());
     }
   });
-  res.redirect('/posts');
+  res.redirect('blog/posts');
 });
 
 // Posts NEW
 router.get('/new', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
-  res.render('posts/new');
+  res.render('blog/posts/new');
 });
 
 // Posts SHOW
@@ -55,7 +55,7 @@ router.get('/:id', function(req, res) {
     if (err) {
       console.log(err.toString());
     } else {
-      res.render('posts/show', {post: foundPost});
+      res.render('blog/posts/show', {post: foundPost});
     }
   });
 });
@@ -63,13 +63,13 @@ router.get('/:id', function(req, res) {
 // Posts EDIT
 router.get('/:id/edit', middleware.checkPostOwnership, function(req, res) {
   Post.findById(req.params.id, function(err, foundPost) {
-      res.render('posts/edit', {post: foundPost});
+      res.render('blog/posts/edit', {post: foundPost});
   });
 });
 
 router.put('/:id', middleware.checkPostOwnership, function(req, res) {
   Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost) {
-      res.redirect('/posts/' + req.params.id);
+      res.redirect('blog/posts/' + req.params.id);
   });
 });
 
@@ -77,9 +77,9 @@ router.put('/:id', middleware.checkPostOwnership, function(req, res) {
 router.delete('/:id', middleware.checkPostOwnership, function(req, res) {
   Post.findByIdAndRemove(req.params.id, function(err) {
     if(err) {
-      res.redirect('/posts');
+      res.redirect('blog/posts');
     } else {
-      res.redirect('/posts');
+      res.redirect('blog/posts');
     }
   });
 });

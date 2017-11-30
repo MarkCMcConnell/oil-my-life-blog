@@ -8,7 +8,7 @@ router.get('/:tag', function(req, res) {
     if(err) {
       console.log(err.toString());
     } else {
-      res.render('tags/show', {tag: req.params.tag, posts: foundPosts});
+      res.render('blog/tags/show', {tag: req.params.tag, posts: foundPosts});
     }
   });
 });
