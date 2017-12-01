@@ -6,7 +6,8 @@ export default function NavDisplay() {
 
   // Determine which menu is being used based on page url
   // Then determine when to hide title
-  if(window.location.href.indexOf('blog') <= 0) {
+  if(window.location.href.indexOf('blog') <= 0 &&
+      window.location.href.indexOf('faq') <=0) {
     let aboutPos = document.getElementById('about').offsetTop - navbarHeight;
 
     if(screen.width >= 800) {

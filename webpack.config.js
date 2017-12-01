@@ -6,6 +6,7 @@ const path = require('path');
 module.exports = {
   entry: {
     App: './public/assets/scripts/App.js',
+    Blog: './public/assets/scripts/Blog.js',
     Vendor: './public/assets/scripts/Vendor.js',
   },
   output: {

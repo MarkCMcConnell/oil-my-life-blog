@@ -4,15 +4,21 @@ var express = require('express'),
     passport = require('passport'),
     sanitizeHTML = require('sanitize-html'),
     oils = require('../public/assets/scripts/data/oils-data'),
+    faq = require('../public/assets/scripts/data/faq-data'),
     User = require('../models/user');
 
 router.get('/', function(req, res) {
-  res.render('landing', {oils: oils});
+  res.render('landing', {oils});
 });
 
 // About page
 router.get('/blog/about', function(req, res) {
   res.render('about');
+});
+
+// FAQ page
+router.get('/faq', function(req, res) {
+  res.render('faq', {faq});
 });
 
 // Show register form

@@ -1,0 +1,24 @@
+<% include partials/landing-header %>
+
+<section class="wrapper">
+  <div class="generic-image generic-image--t-margin">
+    <picture>
+      <source srcset="assets/images/16-6-images/lone-flower-large.jpg 800w" media="(min-width: 800px)" />
+      <img class="generic-image__image" srcset="assets/images/16-6-images/lone-flower-small.jpg 400w" media="(min-width: 400px)" alt="A lone flower" />
+    </picture>
+    <div class="generic-image__title-container">
+      <h1 class="generic-image__title">Frequently Asked Questions</h1>
+    </div>
+  </div>
+  <div class="faq__responses">
+    <% for(let i = 0; i < faq.length; i++) { %>
+      <h4 class="faq__question"><em><%= faq[i].question %></em></h4>
+      <h5 class="faq__answer"><%= faq[i].answer %></h5>
+    <% } %>
+  </div>
+</section>
+
+
+<% include partials/landing-contact %>
+<% include partials/disclaimer %>
+<% include partials/blog-footer %>

@@ -60,55 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _MobileMenu = __webpack_require__(1);
-
-var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
-
-var _Accordion = __webpack_require__(2);
-
-var _Accordion2 = _interopRequireDefault(_Accordion);
-
-var _NavDisplay = __webpack_require__(3);
-
-var _NavDisplay2 = _interopRequireDefault(_NavDisplay);
-
-var _Carousel = __webpack_require__(4);
-
-var _Carousel2 = _interopRequireDefault(_Carousel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var urlTest = 'blog';
-
-var mobileMenu = new _MobileMenu2.default();
-
-// Determine if current page is within the blog site
-// If it is not, run the below functions
-if (window.location.href.indexOf(urlTest) <= 0) {
-  var carousel = new _Carousel2.default();
-
-  window.onload = function () {
-    (0, _Accordion2.default)();
-  };
-}
-
-// Add in auto hiding and showing navbar on scroll
-window.onscroll = function () {
-  (0, _NavDisplay2.default)();
-};
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -152,19 +108,14 @@ var MobileMenu = function () {
 
       // Add listener to close menu when single links are clicked
       // Prevent closing menu when a dropdown menu is selected
-      for (var i = 0; i < this.listItem.length; i++) {
-        if (!this.listItem[i].classList.contains('dropdown')) {
-          this.listItem[i].addEventListener('click', function () {
-            return _this.toggleMenu();
-          });
+      if (document.documentElement.clientWidth < 800 || window.innerWidth < 800) {
+        for (var i = 0; i < this.listItem.length; i++) {
+          if (!this.listItem[i].classList.contains('dropdown')) {
+            this.listItem[i].addEventListener('click', function () {
+              return _this.toggleMenu();
+            });
+          }
         }
-      }
-
-      // Add listener for when dropdown menu item is clicked
-      for (var _i = 0; _i < this.dropdown.length; _i++) {
-        this.dropdown[_i].addEventListener('click', function () {
-          return _this.toggleMenu();
-        });
       }
     }
   }, {
@@ -185,7 +136,84 @@ var MobileMenu = function () {
 exports.default = MobileMenu;
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = NavDisplay;
+function NavDisplay() {
+  var navbarHeight = 122;
+  var currentPos = document.body.scrollTop || document.documentElement.scrollTop;
+  var nav = document.getElementsByClassName('site-header')[0];
+  var menu = document.getElementsByClassName('primary-nav__list')[0];
+
+  // Determine which menu is being used based on page url
+  // Then determine when to hide title
+  if (window.location.href.indexOf('blog') <= 0 && window.location.href.indexOf('faq') <= 0) {
+    var aboutPos = document.getElementById('about').offsetTop - navbarHeight;
+
+    if (screen.width >= 800) {
+      if (currentPos >= aboutPos) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
+  } else {
+    if (screen.width >= 800) {
+      if (currentPos >= 100) {
+        nav.style.top = '-82px';
+      } else {
+        nav.style.top = '0';
+      }
+    }
+  }
+}
+
+/***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _MobileMenu = __webpack_require__(0);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+var _Accordion = __webpack_require__(3);
+
+var _Accordion2 = _interopRequireDefault(_Accordion);
+
+var _NavDisplay = __webpack_require__(1);
+
+var _NavDisplay2 = _interopRequireDefault(_NavDisplay);
+
+var _Carousel = __webpack_require__(4);
+
+var _Carousel2 = _interopRequireDefault(_Carousel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
+var carousel = new _Carousel2.default();
+
+window.onload = function () {
+  (0, _Accordion2.default)();
+};
+
+// Add in auto hiding and showing navbar on scroll
+window.onscroll = function () {
+  (0, _NavDisplay2.default)();
+};
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -229,46 +257,6 @@ function Accordion() {
         accordion[_i2].nextElementSibling.style.maxHeight = null;
       }
     });
-  }
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = NavDisplay;
-function NavDisplay() {
-  var navbarHeight = 122;
-  var currentPos = document.body.scrollTop || document.documentElement.scrollTop;
-  var nav = document.getElementsByClassName('site-header')[0];
-  var menu = document.getElementsByClassName('primary-nav__list')[0];
-
-  // Determine which menu is being used based on page url
-  // Then determine when to hide title
-  if (window.location.href.indexOf('blog') <= 0) {
-    var aboutPos = document.getElementById('about').offsetTop - navbarHeight;
-
-    if (screen.width >= 800) {
-      if (currentPos >= aboutPos) {
-        nav.style.top = '-82px';
-      } else {
-        nav.style.top = '0';
-      }
-    }
-  } else {
-    if (screen.width >= 800) {
-      if (currentPos >= 100) {
-        nav.style.top = '-82px';
-      } else {
-        nav.style.top = '0';
-      }
-    }
   }
 }
 

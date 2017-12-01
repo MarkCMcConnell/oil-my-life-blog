@@ -2,10 +2,10 @@
 
     <%# Most recent blog in hero format %>
     <div class="wrapper wrapper--p-top wrapper--b-margin">
-      <div class="blog-post">
-        <img class="blog-post__image" src="<%= post.image %>" />
-        <div class="blog-post__title-container">
-          <h1 class="blog-post__title"><%= post.title %></h1>
+      <div class="generic-image">
+        <img class="generic-image__image" src="<%= post.image %>" />
+        <div class="generic-image__title-container">
+          <h1 class="generic-image__title"><%= post.title %></h1>
         </div>
       </div>
       <div class="row row--gutters-medium row--b-margin">
@@ -83,4 +83,4 @@
       </div>
     <% include ../../partials/divider %>
     <% include ../../partials/disclaimer %>
-  <% include ../../partials/footer %>
+  <% include ../../partials/blog-footer %>

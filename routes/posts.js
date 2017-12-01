@@ -41,7 +41,7 @@ router.post('/', middleware.isLoggedIn, middleware.isAdmin, function(req, res) {
       console.log(err.toString());
     }
   });
-  res.redirect('blog/posts');
+  res.redirect('/blog/posts');
 });
 
 // Posts NEW
@@ -69,7 +69,7 @@ router.get('/:id/edit', middleware.checkPostOwnership, function(req, res) {
 
 router.put('/:id', middleware.checkPostOwnership, function(req, res) {
   Post.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost) {
-      res.redirect('blog/posts/' + req.params.id);
+      res.redirect('/blog/posts/' + req.params.id);
   });
 });
 
@@ -77,9 +77,9 @@ router.put('/:id', middleware.checkPostOwnership, function(req, res) {
 router.delete('/:id', middleware.checkPostOwnership, function(req, res) {
   Post.findByIdAndRemove(req.params.id, function(err) {
     if(err) {
-      res.redirect('blog/posts');
+      res.redirect('/blog/posts');
     } else {
-      res.redirect('blog/posts');
+      res.redirect('/blog/posts');
     }
   });
 });

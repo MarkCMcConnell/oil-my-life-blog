@@ -21,15 +21,12 @@ class MobileMenu {
   closeMenuBind() {
     // Add listener to close menu when single links are clicked
     // Prevent closing menu when a dropdown menu is selected
-    for(let i = 0; i < this.listItem.length; i++) {
-      if(!this.listItem[i].classList.contains('dropdown')) {
-        this.listItem[i].addEventListener('click', () => this.toggleMenu());
+    if(document.documentElement.clientWidth < 800 || window.innerWidth < 800){
+      for(let i = 0; i < this.listItem.length; i++) {
+        if(!this.listItem[i].classList.contains('dropdown')) {
+          this.listItem[i].addEventListener('click', () => this.toggleMenu());
+        }
       }
-    }
-
-    // Add listener for when dropdown menu item is clicked
-    for(let i = 0; i < this.dropdown.length; i++) {
-      this.dropdown[i].addEventListener('click', () => this.toggleMenu());
     }
   }
 

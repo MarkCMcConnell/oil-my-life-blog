@@ -3,18 +3,11 @@ import Accordion from './modules/Accordion';
 import NavDisplay from './modules/NavDisplay';
 import Carousel from './modules/Carousel';
 
-const urlTest = 'blog';
-
 var mobileMenu = new MobileMenu();
+var carousel = new Carousel();
 
-// Determine if current page is within the blog site
-// If it is not, run the below functions
-if(window.location.href.indexOf(urlTest) <= 0) {
-  var carousel = new Carousel();
-
-  window.onload = function() {
-    Accordion();
-  }
+window.onload = function() {
+  Accordion();
 }
 
 // Add in auto hiding and showing navbar on scroll

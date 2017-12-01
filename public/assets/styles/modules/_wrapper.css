@@ -11,6 +11,10 @@
     padding-top: 2rem;
   }
 
+  &--t-margin {
+    margin-top: 1.75rem;
+  }
+
   &--b-margin {
     margin-bottom: 1.75rem;
   }
