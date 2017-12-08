@@ -9,6 +9,9 @@ var express = require('express'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
     sanitizeHTML = require('sanitize-html'),
+    helmet = require('helmet'),
+    ratelimit - require('express-rate-limit'),
+
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),
@@ -27,11 +30,26 @@ mongoose.connect(localDb, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/public')); // Allow access to assets
 app.use(methodOverride('_method'));
 app.use(flash());
+
+// Security settings
+app.use(helmet({
+  frameguard: {action: 'deny'}
+}));
+  // express-rate-limiter settings
+app.enable('trust proxy');
+
+var limiter = new ratelimit({
+  windowMS: 10*60*1000, // 10 minute window
+  max: 100,  // Each IP has max of 100 requests per windowMS
+  delayMS: 0  // Disable delaying until rate limit is reached
+});
+
+app.use(limiter);
 
 // Passport configuration
 app.use(require('express-session')({
