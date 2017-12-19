@@ -10,7 +10,7 @@ var express = require('express'),
     methodOverride = require('method-override'),
     sanitizeHTML = require('sanitize-html'),
     helmet = require('helmet'),
-    ratelimit - require('express-rate-limit'),
+    ratelimit = require('express-rate-limit'),
 
 
     Post = require('./models/post'),
