@@ -201,11 +201,11 @@ var _Carousel2 = _interopRequireDefault(_Carousel);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
-var carousel = new _Carousel2.default();
+// var carousel = new Carousel();
 
-window.onload = function () {
-  (0, _Accordion2.default)();
-};
+// window.onload = function() {
+//   Accordion();
+// }
 
 // Add in auto hiding and showing navbar on scroll
 window.onscroll = function () {

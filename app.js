@@ -8,10 +8,11 @@ var express = require('express'),
     LocalStrategy = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
     methodOverride = require('method-override'),
+    dotenv = require('dotenv'),
     sanitizeHTML = require('sanitize-html'),
     helmet = require('helmet'),
     ratelimit = require('express-rate-limit'),
-
+    PORT = process.env.PORT || 5000,
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),
@@ -22,11 +23,11 @@ var postsRoutes = require('./routes/posts'),
     tagsRoutes = require('./routes/tags'),
     indexRoutes = require('./routes/index');
 
-var dbUri = 'mongodb://username:password@ds053156.mlab.com:53156/oil-my-life-blog',
+var dbUrl = 'mongodb://' + process.env.MLABLOGIN + ':' + process.env.MLABPASSWORD + '@ds053156.mlab.com:53156/oil-my-life-blog',
     localDb = 'mongodb://localhost/oil_my_life_blog';
 
 // Database connection
-mongoose.connect(localDb, {useMongoClient: true});
+mongoose.connect(dbUrl, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings
@@ -76,6 +77,6 @@ app.use('/blog/posts', postsRoutes);
 app.use('/blog/posts/:id/comments', commentsRoutes);
 app.use('/blog/tags', tagsRoutes);
 
-app.listen(5000, process.env.IP, function() {
+app.listen(PORT, process.env.IP, function() {
   console.log('Server started.');
 });

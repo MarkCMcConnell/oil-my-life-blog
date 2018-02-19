@@ -4,11 +4,11 @@ import NavDisplay from './modules/NavDisplay';
 import Carousel from './modules/Carousel';
 
 var mobileMenu = new MobileMenu();
-var carousel = new Carousel();
+// var carousel = new Carousel();
 
-window.onload = function() {
-  Accordion();
-}
+// window.onload = function() {
+//   Accordion();
+// }
 
 // Add in auto hiding and showing navbar on scroll
 window.onscroll = function() {

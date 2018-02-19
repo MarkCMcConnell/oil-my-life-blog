@@ -1,5 +1,6 @@
 var express = require('express'),
     router = express.Router(),
+    dotenv = require('dotenv'),
     nodeMailer = require('nodemailer'),
     passport = require('passport'),
     sanitizeHTML = require('sanitize-html'),
@@ -8,9 +9,9 @@ var express = require('express'),
     User = require('../models/user');
 
 router.get('/', function(req, res) {
-  res.render('landing', {oils});
-});
-
+  // res.render('landing', {oils});
+  res.redirect('blog/posts');
+})
 // About page
 router.get('/blog/about', function(req, res) {
   res.render('about');
@@ -77,15 +78,15 @@ router.post('/send', function(req, res) {
   var transporter = nodeMailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'Oilmylife2017@gmail.com',
-      pass: 'My02boys!'
+      user: process.env.GMAILLOGIN,
+      pass: process.env.GMAILPASSWORD
     }
   });
 
   // Building e-mail message
   var mailOptions = {
     from: email,
-    to: 'Oilmylife2017@gmail.com',
+    to: process.env.GMAILLOGIN,
     subject: subject,
     html: '<h2>' + sender + '</h2><h3>' + email + '</h3><p>' + cleanMessage + '</p>'
   };

@@ -1,29 +1,32 @@
 <% include ../../partials/header %>
 
     <%# Most recent blog in hero format %>
-    <div class="wrapper wrapper--p-top wrapper--b-margin">
-      <div class="generic-image">
-        <img class="generic-image__image" src="<%= post.image %>" />
-        <div class="generic-image__title-container">
-          <h1 class="generic-image__title"><%= post.title %></h1>
-        </div>
+  <div class="wrapper wrapper--p-top wrapper--b-margin">
+    <header class="generic-image">
+      <img class="generic-image__image" src="<%= post.image %>" />
+      <div class="generic-image__title-container">
+        <h1 class="generic-image__title"><%= post.title %></h1>
       </div>
-      <div class="row row--gutters-medium row--b-margin">
-        <div class="row__medium-8">
-          <% if(currentUser && currentUser.role === 'admin') { %>
-            <div class="button__wrapper">
-              <a href="/blog/posts/<%= post._id %>/edit" class="button button__edit button--b-radius button--small button--yellow">Edit</a>
-              <form action="/blog/posts/<%= post._id %>?_method=DELETE" method="POST">
-                <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
-              </form>
-            </div>
-          <% } %>
-          <%# Tags %>
+    </header>
+    <div class="row row--gutters-medium row--b-margin">
+      <div class="row__medium-8">
+        <article>
+          <%# Determine if user is admin and display Edit/Delete buttons if true %>
+            <% if(currentUser && currentUser.role === 'admin') { %>
+              <div class="button__wrapper">
+                <a href="/blog/posts/<%= post._id %>/edit" class="button button__edit button--b-radius button--small button--yellow">Edit</a>
+                <form action="/blog/posts/<%= post._id %>?_method=DELETE" method="POST">
+                  <button class="button button__delete button--b-radius button--margins button--red">Delete</button>
+                </form>
+              </div>
+            <% } %>
+          <%# Display selected post Tags %>
             <p class="blog-post__tag-list">Tags:
               <% for (var i = 0; i < post.tags.length; i++) { %>
                 <a class="blog-post__tag" href="/blog/tags/<%= post.tags[i] %>"><%= post.tags[i] %></a>
               <% } %>
             </p>
+          <%# Logic to determine post date and display %>
             <p>Posted:
               <% var monthNames = [
                   "January", "February", "March", "April", "May", "June",
@@ -36,11 +39,14 @@
               %>
               <span class="blog-post__date"><%= month + ' ' + day + ', ' + year %></span>
             </p>
-          <div class="blog-post__end-line"></div>
-          <%# Post goes here %>
-          <p><%- post.content %></p>
-          <div class="blog-post__end-line"></div>
-          <%# Display associated comments %>
+          <%# Display selected blog post %>
+            <div class="blog-post__end-line"></div>
+            <%# Post goes here %>
+            <p><%- post.content %></p>
+            <div class="blog-post__end-line"></div>
+        </article>
+        <%# Display associated comments %>
+        <section>
           <div class="row">
             <h3 class="blog-post__comments-title">Comments</h3>
             <a class="button button--b-radius button--b-margin button--pull-right" href="/blog/posts/<%= post._id %>/comments/new">
@@ -78,9 +84,10 @@
               </div>
             </div>
           <% }); %>
-        </div>
-        <% include ../../partials/sidebar %>
+        </section>
       </div>
-    <% include ../../partials/divider %>
-    <% include ../../partials/disclaimer %>
+      <% include ../../partials/sidebar %>
+    </div>
+  <% include ../../partials/divider %>
+  <% include ../../partials/disclaimer %>
   <% include ../../partials/blog-footer %>
