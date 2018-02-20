@@ -12,7 +12,7 @@ var express = require('express'),
     sanitizeHTML = require('sanitize-html'),
     helmet = require('helmet'),
     ratelimit = require('express-rate-limit'),
-    PORT = 5000,
+    PORT = 3000,
 
     Post = require('./models/post'),
     Comment = require('./models/comment'),

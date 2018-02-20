@@ -11,7 +11,7 @@ gulp.task('watch', function() {
   browserSync.init({
     // Prevent browser-sync notification in window
     notify: false,
-    proxy: 'http://localhost:5000',
+    proxy: 'http://localhost:3000',
     files: ['**/*.*'],
     port: 7000
   });
