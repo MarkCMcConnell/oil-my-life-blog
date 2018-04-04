@@ -27,7 +27,7 @@ var dbUri = 'mongodb://' + process.env.MLABLOGIN + ':' + process.env.MLABPASSWOR
     localDb = 'mongodb://localhost/oil_my_life_blog';
 
 // Database connection
-mongoose.connect(dbUri, {useMongoClient: true});
+mongoose.connect(localDb, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 // General settings

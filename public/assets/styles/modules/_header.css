@@ -7,7 +7,7 @@
   position: relative;
 
   @mixin atMedium {
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-bottom: 3.75rem;
   }
 
@@ -42,10 +42,10 @@
   }
 
   &__span {
-    display: block;
-
+    display: none;
+/* 
     @mixin atMedium {
       display: inline;
-    }
+    } */
   }
 }

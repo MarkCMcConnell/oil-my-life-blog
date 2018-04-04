@@ -14,8 +14,8 @@
     width: 100%;
 
     @mixin atMedium {
-      width: 60%;
-      height: auto;
+      max-width: 50%;
+      height: 100%;
       float: left;
     }
   }
