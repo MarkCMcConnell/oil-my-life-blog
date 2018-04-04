@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "oil-my-life-blog",
+      "script": "npm",
+      "args": "start"
+    }
+  ]
+}
